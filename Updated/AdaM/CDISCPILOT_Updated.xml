@@ -7,7 +7,7 @@
      ODMVersion="1.3.2"
      FileType="Snapshot"
      FileOID="CDISCPILOT_Updated.CDISC ADaM.2.1"
-     CreationDateTime="2018-08-29T13:34:27">
+     CreationDateTime="2018-09-06T10:24:49">
    <Study OID="CDISCPILOT_Updated.CDISC ADaM.2.1">
       <GlobalVariables>
          <StudyName>CDISCPILOT_Updated</StudyName>
@@ -4477,98 +4477,6 @@
                      Mandatory="No"
                      MethodOID="MT.ADNPIX.QSSEQ.NPTOTMN">
                <def:WhereClauseRef WhereClauseOID="WC.ADNPIX.QSSEQ.EQ.NPTOTMN-244f6c53"/>
-            </ItemRef>
-         </def:ValueListDef>
-         <def:ValueListDef OID="VL.ADVS.AVAL">
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.DIABP-722b5790" OrderNumber="1"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.DIABP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.DIABP-722b5790"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.HEIGHT-54cb3052" OrderNumber="2"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.HEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.HEIGHT-54cb3052"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.PULSE-63bb703f" OrderNumber="3"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.PULSE">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.PULSE-63bb703f"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.SYSBP-f4f0e8f6" OrderNumber="4"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.SYSBP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.SYSBP-f4f0e8f6"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.TEMP-80307492" OrderNumber="5"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.TEMP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.TEMP-80307492"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.AVAL.EQ.WEIGHT-7f59386d" OrderNumber="6"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.AVAL.WEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.AVAL.EQ.WEIGHT-7f59386d"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.DIABP-517e3641" OrderNumber="7"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.DIABP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.DIABP-517e3641"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.HEIGHT-95bc3c8f" OrderNumber="8"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.HEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.HEIGHT-95bc3c8f"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.PULSE-8b993019" OrderNumber="9"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.PULSE">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.PULSE-8b993019"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.SYSBP-dda9bb5b" OrderNumber="10"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.SYSBP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.SYSBP-dda9bb5b"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.TEMP-5b835760" OrderNumber="11"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.TEMP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.TEMP-5b835760"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.BASE.EQ.WEIGHT-2c0e9f5c" OrderNumber="12"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.BASE.WEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.BASE.EQ.WEIGHT-2c0e9f5c"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.DIABP-e9a95ff3" OrderNumber="13"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.DIABP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.DIABP-e9a95ff3"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.HEIGHT-f5a43f9f" OrderNumber="14"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.HEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.HEIGHT-f5a43f9f"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.PULSE-bed973b4" OrderNumber="15"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.PULSE">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.PULSE-bed973b4"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.SYSBP-372327d0" OrderNumber="16"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.SYSBP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.SYSBP-372327d0"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.TEMP-0da1fef8" OrderNumber="17"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.TEMP">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.TEMP-0da1fef8"/>
-            </ItemRef>
-            <ItemRef ItemOID="IT.ADVS.AVAL.ADVS.CHG.EQ.WEIGHT-5174d3b1" OrderNumber="18"
-                     Mandatory="No"
-                     MethodOID="MT.ADVS.CHG.WEIGHT">
-               <def:WhereClauseRef WhereClauseOID="WC.ADVS.CHG.EQ.WEIGHT-5174d3b1"/>
             </ItemRef>
          </def:ValueListDef>
          <def:ValueListDef OID="VL.ADLBCPV.AVAL">
@@ -16383,17 +16291,19 @@
                      MethodOID="MT.ADVS.AVISITN"/>
             <ItemRef ItemOID="IT.ADVS.AVAL" OrderNumber="26" Mandatory="No" MethodOID="MT.ADVS.AVAL"/>
             <ItemRef ItemOID="IT.ADVS.BASE" OrderNumber="27" Mandatory="No" MethodOID="MT.ADVS.BASE"/>
-            <ItemRef ItemOID="IT.ADVS.CHG" OrderNumber="28" Mandatory="No" MethodOID="MT.ADVS.CHG"/>
-            <ItemRef ItemOID="IT.ADVS.PCHG" OrderNumber="29" Mandatory="No" MethodOID="MT.ADVS.PCHG"/>
-            <ItemRef ItemOID="IT.ADVS.VISITNUM" OrderNumber="30" Mandatory="No"
+            <ItemRef ItemOID="IT.ADVS.BASETYPE" OrderNumber="28" Mandatory="No"
+                     MethodOID="MT.ADVS.BASETYPE"/>
+            <ItemRef ItemOID="IT.ADVS.CHG" OrderNumber="29" Mandatory="No" MethodOID="MT.ADVS.CHG"/>
+            <ItemRef ItemOID="IT.ADVS.PCHG" OrderNumber="30" Mandatory="No" MethodOID="MT.ADVS.PCHG"/>
+            <ItemRef ItemOID="IT.ADVS.VISITNUM" OrderNumber="31" Mandatory="No"
                      MethodOID="MT.ADVS.VISITNUM"/>
-            <ItemRef ItemOID="IT.ADVS.VISIT" OrderNumber="31" Mandatory="No"
+            <ItemRef ItemOID="IT.ADVS.VISIT" OrderNumber="32" Mandatory="No"
                      MethodOID="MT.ADVS.VISIT"/>
-            <ItemRef ItemOID="IT.ADVS.VSSEQ" OrderNumber="32" Mandatory="No"
+            <ItemRef ItemOID="IT.ADVS.VSSEQ" OrderNumber="33" Mandatory="No"
                      MethodOID="MT.ADVS.VSSEQ"/>
-            <ItemRef ItemOID="IT.ADVS.ANL01FL" OrderNumber="33" Mandatory="No"
+            <ItemRef ItemOID="IT.ADVS.ANL01FL" OrderNumber="34" Mandatory="No"
                      MethodOID="MT.ADVS.ANL01FL"/>
-            <ItemRef ItemOID="IT.ADVS.ABLFL" OrderNumber="34" Mandatory="No"
+            <ItemRef ItemOID="IT.ADVS.ABLFL" OrderNumber="35" Mandatory="No"
                      MethodOID="MT.ADVS.ABLFL"/>
             <def:leaf ID="LF.ADVS" xlink:href="advs.xpt">
                <def:title>advs.xpt</def:title>
@@ -19875,7 +19785,7 @@
          <ItemDef OID="IT.ADVS.PARAMN" Name="PARAMN" DataType="integer" Length="8"
                   SASFieldName="PARAMN">
             <Description>
-               <TranslatedText xml:lang="en">Parameter Number</TranslatedText>
+               <TranslatedText xml:lang="en">Parameter (N)</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.PARAMN_ADVS"/>
             <def:Origin Type="Derived"/>
@@ -19930,13 +19840,19 @@
                <TranslatedText xml:lang="en">Analysis Value</TranslatedText>
             </Description>
             <def:Origin Type="Derived"/>
-            <def:ValueListRef ValueListOID="VL.ADVS.AVAL"/>
          </ItemDef>
          <ItemDef OID="IT.ADVS.BASE" Name="BASE" DataType="float" Length="8"
                   SignificantDigits="1"
                   SASFieldName="BASE">
             <Description>
                <TranslatedText xml:lang="en">Baseline Value</TranslatedText>
+            </Description>
+            <def:Origin Type="Derived"/>
+         </ItemDef>
+         <ItemDef OID="IT.ADVS.BASETYPE" Name="BASETYPE" DataType="text" Length="30"
+                  SASFieldName="BASETYPE">
+            <Description>
+               <TranslatedText xml:lang="en">Baseline Type</TranslatedText>
             </Description>
             <def:Origin Type="Derived"/>
          </ItemDef>
@@ -19982,7 +19898,7 @@
          <ItemDef OID="IT.ADVS.ANL01FL" Name="ANL01FL" DataType="text" Length="1"
                   SASFieldName="ANL01FL">
             <Description>
-               <TranslatedText xml:lang="en">Analysis Record Flag 01</TranslatedText>
+               <TranslatedText xml:lang="en">Analysis Flag 01</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.Y_BLANK"/>
             <def:Origin Type="Derived"/>
@@ -26638,138 +26554,6 @@
                   SASFieldName="AVAL">
             <def:Origin Type="Derived"/>
          </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.DIABP-722b5790"
-                  Name="AVAL.ADVS.AVAL.EQ.DIABP-722b5790"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.HEIGHT-54cb3052"
-                  Name="AVAL.ADVS.AVAL.EQ.HEIGHT-54cb3052"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.PULSE-63bb703f"
-                  Name="AVAL.ADVS.AVAL.EQ.PULSE-63bb703f"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.SYSBP-f4f0e8f6"
-                  Name="AVAL.ADVS.AVAL.EQ.SYSBP-f4f0e8f6"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.TEMP-80307492"
-                  Name="AVAL.ADVS.AVAL.EQ.TEMP-80307492"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.AVAL.EQ.WEIGHT-7f59386d"
-                  Name="AVAL.ADVS.AVAL.EQ.WEIGHT-7f59386d"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.DIABP-517e3641"
-                  Name="AVAL.ADVS.BASE.EQ.DIABP-517e3641"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.HEIGHT-95bc3c8f"
-                  Name="AVAL.ADVS.BASE.EQ.HEIGHT-95bc3c8f"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.PULSE-8b993019"
-                  Name="AVAL.ADVS.BASE.EQ.PULSE-8b993019"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.SYSBP-dda9bb5b"
-                  Name="AVAL.ADVS.BASE.EQ.SYSBP-dda9bb5b"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.TEMP-5b835760"
-                  Name="AVAL.ADVS.BASE.EQ.TEMP-5b835760"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.BASE.EQ.WEIGHT-2c0e9f5c"
-                  Name="AVAL.ADVS.BASE.EQ.WEIGHT-2c0e9f5c"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.DIABP-e9a95ff3"
-                  Name="AVAL.ADVS.CHG.EQ.DIABP-e9a95ff3"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.HEIGHT-f5a43f9f"
-                  Name="AVAL.ADVS.CHG.EQ.HEIGHT-f5a43f9f"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.PULSE-bed973b4"
-                  Name="AVAL.ADVS.CHG.EQ.PULSE-bed973b4"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.SYSBP-372327d0"
-                  Name="AVAL.ADVS.CHG.EQ.SYSBP-372327d0"
-                  DataType="integer"
-                  Length="8"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.TEMP-0da1fef8"
-                  Name="AVAL.ADVS.CHG.EQ.TEMP-0da1fef8"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
-         <ItemDef OID="IT.ADVS.AVAL.ADVS.CHG.EQ.WEIGHT-5174d3b1"
-                  Name="AVAL.ADVS.CHG.EQ.WEIGHT-5174d3b1"
-                  DataType="float"
-                  Length="8"
-                  SignificantDigits="1"
-                  SASFieldName="AVAL">
-            <def:Origin Type="Derived"/>
-         </ItemDef>
          <ItemDef OID="IT.ADLBCPV.AVAL.ADLBCPV.A1HI.EQ.ALB-c2107e2c"
                   Name="AVAL.ADLBCPV.A1HI.EQ.ALB-c2107e2c"
                   DataType="integer"
@@ -32604,7 +32388,7 @@
             </CodeListItem>
             <CodeListItem CodedValue="PULSE" OrderNumber="3">
                <Decode>
-                  <TranslatedText xml:lang="en">Pulse Rate (BEATS/MIN)</TranslatedText>
+                  <TranslatedText xml:lang="en">Pulse Rate (beats/min)</TranslatedText>
                </Decode>
             </CodeListItem>
             <CodeListItem CodedValue="WEIGHT" OrderNumber="4">
@@ -33178,7 +32962,7 @@
             </CodeListItem>
             <CodeListItem CodedValue="3" OrderNumber="3">
                <Decode>
-                  <TranslatedText xml:lang="en">Pulse Rate (BEATS/MIN)</TranslatedText>
+                  <TranslatedText xml:lang="en">Pulse Rate (beats/min)</TranslatedText>
                </Decode>
             </CodeListItem>
             <CodeListItem CodedValue="4" OrderNumber="4">
@@ -41707,6 +41491,12 @@
                     Type="Computation">
             <Description>
                <TranslatedText xml:lang="en">VS.VSSTRESN where VSBLFL="Y"</TranslatedText>
+            </Description>
+         </MethodDef>
+         <MethodDef OID="MT.ADVS.BASETYPE" Name="Algorithm to derive ADVS.BASETYPE"
+                    Type="Computation">
+            <Description>
+               <TranslatedText xml:lang="en">VS.VSTPT</TranslatedText>
             </Description>
          </MethodDef>
          <MethodDef OID="MT.ADVS.CHG" Name="Algorithm to derive ADVS.CHG" Type="Computation">
