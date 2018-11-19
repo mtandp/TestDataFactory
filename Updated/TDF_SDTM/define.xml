@@ -6,23 +6,22 @@
      xmlns:def="http://www.cdisc.org/ns/def/v2.0"
      ODMVersion="1.3.2"
      FileType="Snapshot"
-     FileOID="UpdatedCDISCPILOT.CDISC SDTM.3.2"
-     CreationDateTime="2017-09-29T09:52:05">
-   <Study OID="UpdatedCDISCPILOT.CDISC SDTM.3.2">
+     FileOID="TDF_SDTM.CDISC SDTM.3.2"
+     CreationDateTime="2018-11-19T08:39:20">
+   <Study OID="TDF_SDTM.CDISC SDTM.3.2">
       <GlobalVariables>
-         <StudyName>UpdatedCDISCPILOT</StudyName>
-         <StudyDescription>UpdatedCDISCPILOT Data Definition</StudyDescription>
-         <ProtocolName>UpdatedCDISCPILOT</ProtocolName>
+         <StudyName>TDF_SDTM</StudyName>
+         <StudyDescription>Test datasets created by updating existing CDISCPILOT SDTM datasets</StudyDescription>
+         <ProtocolName>TDF_Datasets</ProtocolName>
       </GlobalVariables>
-      <MetaDataVersion OID="MDV.UpdatedCDISCPILOT.CDISC SDTM.3.2"
-                       Name="Study UpdatedCDISCPILOT Data Definitions"
-                       Description="UpdatedCDISCPILOT Data Definition"
+      <MetaDataVersion OID="MDV.TDF_SDTM.CDISC SDTM.3.2" Name="Study TDF_SDTM Data Definitions"
+                       Description="Test datasets created by updating existing CDISCPILOT SDTM datasets"
                        def:DefineVersion="2.0.0"
                        def:StandardName="CDISC SDTM"
                        def:StandardVersion="3.2">
-         <def:AnnotatedCRF>
+         <def:SupplementalDoc>
             <def:DocumentRef leafID="LF.blankcrf"/>
-         </def:AnnotatedCRF>
+         </def:SupplementalDoc>
          <def:ValueListDef OID="VL.LBHE.LBORRES">
             <ItemRef ItemOID="IT.LBHE.LBORRES.LBHE.LBCAT.EQ.NULL-52978e56" OrderNumber="1"
                      Mandatory="No">
@@ -3754,11 +3753,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TA.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -3830,11 +3825,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TE.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -3884,11 +3875,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TI.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -3911,11 +3898,7 @@
                <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.IETEST"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="1 2 3 4 5 6"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TI.IECAT" Name="IECAT" DataType="text" Length="9" SASFieldName="IECAT">
             <Description>
@@ -3929,11 +3912,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TS.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4004,11 +3983,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.TV.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4067,11 +4042,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DM.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4092,11 +4063,7 @@
             <Description>
                <TranslatedText xml:lang="en">Subject Identifier for the Study</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DM.RFSTDTC" Name="RFSTDTC" DataType="date" Length="10"
                   SASFieldName="RFSTDTC">
@@ -4180,22 +4147,14 @@
                <TranslatedText xml:lang="en">Sex</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.SEX"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DM.RACE" Name="RACE" DataType="text" Length="78" SASFieldName="RACE">
             <Description>
                <TranslatedText xml:lang="en">Race</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.RACE"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DM.ETHNIC" Name="ETHNIC" DataType="text" Length="25"
                   SASFieldName="ETHNIC">
@@ -4249,11 +4208,7 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of Collection</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DM.DMDY" Name="DMDY" DataType="integer" Length="8" SASFieldName="DMDY">
             <Description>
@@ -4266,11 +4221,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SE.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4354,11 +4305,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SV.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4382,24 +4329,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="7 22 25 32 36 42 49 52 58 67 73 82 88 90 99 108 116 121 122 123 123 125 126 128"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SV.VISIT" Name="VISIT" DataType="text" Length="19" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="7 22 25 32 36 42 49 52 58 67 73 82 88 90 99 108 116 121 122 123 123 125 126 128"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SV.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -4455,11 +4392,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4493,11 +4426,7 @@
             <Description>
                <TranslatedText xml:lang="en">Reported Name of Drug, Med, or Therapy</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMDECOD" Name="CMDECOD" DataType="text" Length="24"
                   SASFieldName="CMDECOD">
@@ -4512,11 +4441,7 @@
             <Description>
                <TranslatedText xml:lang="en">Indication</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMCLAS" Name="CMCLAS" DataType="text" Length="42"
                   SASFieldName="CMCLAS"
@@ -4532,22 +4457,14 @@
             <Description>
                <TranslatedText xml:lang="en">Dose per Administration</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMDOSU" Name="CMDOSU" DataType="text" Length="17"
                   SASFieldName="CMDOSU">
             <Description>
                <TranslatedText xml:lang="en">Dose Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMDOSFRQ" Name="CMDOSFRQ" DataType="text" Length="15"
                   SASFieldName="CMDOSFRQ">
@@ -4555,11 +4472,7 @@
                <TranslatedText xml:lang="en">Dosing Frequency per Interval</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.CMFREQ"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMROUTE" Name="CMROUTE" DataType="text" Length="200"
                   SASFieldName="CMROUTE">
@@ -4567,11 +4480,7 @@
                <TranslatedText xml:lang="en">Route of Administration</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.CMROUTE"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.VISITNUM" Name="VISITNUM" DataType="float" Length="8"
                   SignificantDigits="1"
@@ -4581,22 +4490,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.VISIT" Name="VISIT" DataType="text" Length="19" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -4616,33 +4517,21 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of Collection</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMSTDTC" Name="CMSTDTC" DataType="date" Length="10"
                   SASFieldName="CMSTDTC">
             <Description>
                <TranslatedText xml:lang="en">Start Date/Time of Medication</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMENDTC" Name="CMENDTC" DataType="date" Length="10"
                   SASFieldName="CMENDTC">
             <Description>
                <TranslatedText xml:lang="en">End Date/Time of Medication</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="124 125 126"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.CM.CMDY" Name="CMDY" DataType="integer" Length="8" SASFieldName="CMDY">
             <Description>
@@ -4669,11 +4558,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.EX.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4750,22 +4635,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="25 36 42 49 52 58 67 73 82 90 99 108 116 128"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.EX.VISIT" Name="VISIT" DataType="text" Length="19" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="25 36 42 49 52 58 67 73 82 90 99 108 116 128"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.EX.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -4786,22 +4663,14 @@
             <Description>
                <TranslatedText xml:lang="en">Start Date/Time of Treatment</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="25 36 42 49 52 58 67 73 82 90 99 108 116 128"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.EX.EXENDTC" Name="EXENDTC" DataType="date" Length="10"
                   SASFieldName="EXENDTC">
             <Description>
                <TranslatedText xml:lang="en">End Date/Time of Treatment</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="105 138"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.EX.EXSTDY" Name="EXSTDY" DataType="integer" Length="8"
                   SASFieldName="EXSTDY">
@@ -4822,11 +4691,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -4854,22 +4719,14 @@
             <Description>
                <TranslatedText xml:lang="en">Sponsor-Defined Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AETERM" Name="AETERM" DataType="text" Length="200"
                   SASFieldName="AETERM">
             <Description>
                <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AELLT" Name="AELLT" DataType="text" Length="100"
                   SASFieldName="AELLT">
@@ -4966,22 +4823,14 @@
                <TranslatedText xml:lang="en">Severity/Intensity</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.SEV"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESER" Name="AESER" DataType="text" Length="1" SASFieldName="AESER">
             <Description>
                <TranslatedText xml:lang="en">Serious Event</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AEACN" Name="AEACN" DataType="text" Length="30" SASFieldName="AEACN">
             <Description>
@@ -4994,11 +4843,7 @@
                <TranslatedText xml:lang="en">Causality</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.AECAUS"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AEOUT" Name="AEOUT" DataType="text" Length="200"
                   SASFieldName="AEOUT">
@@ -5006,11 +4851,7 @@
                <TranslatedText xml:lang="en">Outcome of Adverse Event</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.OUT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESCAN" Name="AESCAN" DataType="text" Length="1"
                   SASFieldName="AESCAN">
@@ -5018,11 +4859,7 @@
                <TranslatedText xml:lang="en">Involves Cancer</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESCONG" Name="AESCONG" DataType="text" Length="1"
                   SASFieldName="AESCONG">
@@ -5030,11 +4867,7 @@
                <TranslatedText xml:lang="en">Congenital Anomaly or Birth Defect</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESDISAB" Name="AESDISAB" DataType="text" Length="1"
                   SASFieldName="AESDISAB">
@@ -5042,11 +4875,7 @@
                <TranslatedText xml:lang="en">Persist or Signif Disability/Incapacity</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESDTH" Name="AESDTH" DataType="text" Length="1"
                   SASFieldName="AESDTH">
@@ -5054,11 +4883,7 @@
                <TranslatedText xml:lang="en">Results in Death</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESHOSP" Name="AESHOSP" DataType="text" Length="1"
                   SASFieldName="AESHOSP">
@@ -5066,11 +4891,7 @@
                <TranslatedText xml:lang="en">Requires or Prolongs Hospitalization</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESLIFE" Name="AESLIFE" DataType="text" Length="1"
                   SASFieldName="AESLIFE">
@@ -5078,22 +4899,14 @@
                <TranslatedText xml:lang="en">Is Life Threatening</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AESOD" Name="AESOD" DataType="text" Length="1" SASFieldName="AESOD">
             <Description>
                <TranslatedText xml:lang="en">Occurred with Overdose</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.YN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.EPOCH" Name="EPOCH" DataType="text" Length="9" SASFieldName="EPOCH">
             <Description>
@@ -5113,22 +4926,14 @@
             <Description>
                <TranslatedText xml:lang="en">Start Date/Time of Adverse Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AEENDTC" Name="AEENDTC" DataType="date" Length="10"
                   SASFieldName="AEENDTC">
             <Description>
                <TranslatedText xml:lang="en">End Date/Time of Adverse Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.AE.AEDY" Name="AEDY" DataType="integer" Length="8" SASFieldName="AEDY">
             <Description>
@@ -5155,11 +4960,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -5194,11 +4995,7 @@
             <Description>
                <TranslatedText xml:lang="en">Reported Term for the Disposition Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.DSDECOD" Name="DSDECOD" DataType="text" Length="63"
                   SASFieldName="DSDECOD">
@@ -5206,11 +5003,7 @@
                <TranslatedText xml:lang="en">Standardized Disposition Term</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.DISCCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.DSCAT" Name="DSCAT" DataType="text" Length="17" SASFieldName="DSCAT">
             <Description>
@@ -5227,22 +5020,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.VISIT" Name="VISIT" DataType="text" Length="17" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.EPOCH" Name="EPOCH" DataType="text" Length="9" SASFieldName="EPOCH">
             <Description>
@@ -5256,22 +5041,14 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of Collection</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.DSSTDTC" Name="DSSTDTC" DataType="date" Length="10"
                   SASFieldName="DSSTDTC">
             <Description>
                <TranslatedText xml:lang="en">Start Date/Time of Disposition Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.DS.DSDY" Name="DSDY" DataType="integer" Length="8" SASFieldName="DSDY">
             <Description>
@@ -5291,11 +5068,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -5323,22 +5096,14 @@
             <Description>
                <TranslatedText xml:lang="en">Sponsor-Defined Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="14 15 121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.MHTERM" Name="MHTERM" DataType="text" Length="19"
                   SASFieldName="MHTERM">
             <Description>
                <TranslatedText xml:lang="en">Reported Term for the Medical History</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="14 15 121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.MHLLT" Name="MHLLT" DataType="text" Length="200"
                   SASFieldName="MHLLT">
@@ -5393,11 +5158,7 @@
                <TranslatedText xml:lang="en">Severity/Intensity</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.SEV"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.VISITNUM" Name="VISITNUM" DataType="float" Length="8"
                   SignificantDigits="1"
@@ -5407,22 +5168,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="14 15 121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.VISIT" Name="VISIT" DataType="text" Length="19" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="14 15 121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -5435,22 +5188,14 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of History Collection</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="14 15 121 122 123"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.MHSTDTC" Name="MHSTDTC" DataType="date" Length="10"
                   SASFieldName="MHSTDTC">
             <Description>
                <TranslatedText xml:lang="en">Start Date/Time of Medical History Event</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="12 14"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.MH.MHDY" Name="MHDY" DataType="integer" Length="8" SASFieldName="MHDY">
             <Description>
@@ -5463,11 +5208,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.LBCH.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -5646,11 +5387,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.LBHE.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -5829,11 +5566,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.LBUR.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6012,11 +5745,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6045,24 +5774,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -6070,36 +5789,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSCO.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -6108,11 +5812,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -6175,12 +5875,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -6188,12 +5883,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -6228,11 +5918,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6261,24 +5947,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -6286,36 +5962,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSDA.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -6324,11 +5985,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -6391,12 +6048,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -6404,12 +6056,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -6444,11 +6091,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6477,24 +6120,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -6502,36 +6135,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSGI.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -6540,11 +6158,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -6607,12 +6221,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -6620,12 +6229,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSGI.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -6660,11 +6264,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6693,24 +6293,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -6718,36 +6308,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSHI.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -6756,11 +6331,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -6823,12 +6394,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -6836,12 +6402,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -6876,11 +6437,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -6909,24 +6466,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -6934,36 +6481,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSMM.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -6972,11 +6504,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -7039,12 +6567,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -7052,12 +6575,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -7092,11 +6610,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -7125,24 +6639,14 @@
                <TranslatedText xml:lang="en">Question Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QS.QSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSTEST" Name="QSTEST" DataType="text" Length="40"
                   SASFieldName="QSTEST">
             <Description>
                <TranslatedText xml:lang="en">Question Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSCAT" Name="QSCAT" DataType="text" Length="70"
                   SASFieldName="QSCAT">
@@ -7150,36 +6654,21 @@
                <TranslatedText xml:lang="en">Category of Question</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSCAT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSSCAT" Name="QSSCAT" DataType="text" Length="26"
                   SASFieldName="QSSCAT">
             <Description>
                <TranslatedText xml:lang="en">Subcategory for Question</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES" Name="QSORRES" DataType="text" Length="20"
                   SASFieldName="QSORRES">
             <Description>
                <TranslatedText xml:lang="en">Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.QSNI.QSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRESU" Name="QSORRESU" DataType="text" Length="7"
@@ -7188,11 +6677,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.QSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSSTRESC" Name="QSSTRESC" DataType="text" Length="4"
                   SASFieldName="QSSTRESC">
@@ -7255,12 +6740,7 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.VISIT" Name="VISIT" DataType="text" Length="19"
                   SASFieldName="VISIT">
@@ -7268,12 +6748,7 @@
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 11 26 27 28 29 38 44 54 59 60 61 62 63 69 74 75 76 77 78 84 89 91 92 93 94 95 101 109 110 111 112 113 130 131 132 133 134 156 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -7308,11 +6783,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SC.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -7341,22 +6812,14 @@
                <TranslatedText xml:lang="en">Subject Characteristic Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.SC.SCTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="8"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SC.SCTEST" Name="SCTEST" DataType="text" Length="27"
                   SASFieldName="SCTEST">
             <Description>
                <TranslatedText xml:lang="en">Subject Characteristic</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="8"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SC.SCCAT" Name="SCCAT" DataType="text" Length="9" SASFieldName="SCCAT"
                   def:CommentOID="COM.SC.SCCAT">
@@ -7371,11 +6834,7 @@
             <Description>
                <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="8"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.SC.SCORRES"/>
          </ItemDef>
          <ItemDef OID="IT.SC.SCORRESU" Name="SCORRESU" DataType="text" Length="5"
@@ -7384,11 +6843,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.SCUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="8"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SC.SCSTRESC" Name="SCSTRESC" DataType="text" Length="2"
                   SASFieldName="SCSTRESC">
@@ -7416,11 +6871,7 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of Collection</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SC.SCDY" Name="SCDY" DataType="integer" Length="8" SASFieldName="SCDY">
             <Description>
@@ -7433,11 +6884,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.DOMAIN" Name="DOMAIN" DataType="text" Length="2"
                   SASFieldName="DOMAIN">
@@ -7466,48 +6913,28 @@
                <TranslatedText xml:lang="en">Vital Signs Test Short Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VS.VSTESTCD"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSTEST" Name="VSTEST" DataType="text" Length="24"
                   SASFieldName="VSTEST">
             <Description>
                <TranslatedText xml:lang="en">Vital Signs Test Name</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSPOS" Name="VSPOS" DataType="text" Length="8" SASFieldName="VSPOS">
             <Description>
                <TranslatedText xml:lang="en">Vital Signs Position of Subject</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VSPOS"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES" Name="VSORRES" DataType="text" Length="5"
                   SASFieldName="VSORRES">
             <Description>
                <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.VS.VSORRES"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRESU" Name="VSORRESU" DataType="text" Length="9"
@@ -7516,12 +6943,7 @@
                <TranslatedText xml:lang="en">Original Units</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VSUNIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSSTRESC" Name="VSSTRESC" DataType="text" Length="6"
                   SASFieldName="VSSTRESC">
@@ -7552,23 +6974,14 @@
                <TranslatedText xml:lang="en">Completion Status</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.ND"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSLOC" Name="VSLOC" DataType="text" Length="11" SASFieldName="VSLOC">
             <Description>
                <TranslatedText xml:lang="en">Location of Vital Signs Measurement</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VSLOC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="17 23 30 33 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSBLFL" Name="VSBLFL" DataType="text" Length="1"
                   SASFieldName="VSBLFL">
@@ -7586,24 +6999,14 @@
                <TranslatedText xml:lang="en">Visit Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISITNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VISIT" Name="VISIT" DataType="text" Length="19" SASFieldName="VISIT">
             <Description>
                <TranslatedText xml:lang="en">Visit Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VISIT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VISITDY" Name="VISITDY" DataType="integer" Length="8"
                   SASFieldName="VISITDY">
@@ -7623,12 +7026,7 @@
             <Description>
                <TranslatedText xml:lang="en">Date/Time of Measurements</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSDY" Name="VSDY" DataType="integer" Length="8" SASFieldName="VSDY">
             <Description>
@@ -7641,12 +7039,7 @@
                <TranslatedText xml:lang="en">Planned Time Point Name</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VSTPT"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSTPTNUM" Name="VSTPTNUM" DataType="integer" Length="8"
                   SASFieldName="VSTPTNUM">
@@ -7654,12 +7047,7 @@
                <TranslatedText xml:lang="en">Planned Time Point Number</TranslatedText>
             </Description>
             <CodeListRef CodeListOID="CL.VSTPTNUM"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="16 17 22 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSELTM" Name="VSELTM" DataType="text" Length="4"
                   SASFieldName="VSELTM">
@@ -7681,11 +7069,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.RELREC.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN">
@@ -7734,11 +7118,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPAE.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -7812,11 +7192,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPDM.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -7891,11 +7267,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPDS.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -7939,11 +7311,7 @@
             <Description>
                <TranslatedText xml:lang="en">Qualifier Variable Label</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPDS.QVAL" Name="QVAL" DataType="text" Length="200"
                   SASFieldName="QVAL"
@@ -7951,11 +7319,7 @@
             <Description>
                <TranslatedText xml:lang="en">Data Value</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106 139"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
             <def:ValueListRef ValueListOID="VL.SUPPDS.QVAL"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPDS.QORIG" Name="QORIG" DataType="text" Length="200"
@@ -7978,11 +7342,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPLBCH.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -8057,11 +7417,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPLBHE.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -8136,11 +7492,7 @@
             <Description>
                <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
             </Description>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="7"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPLBUR.RDOMAIN" Name="RDOMAIN" DataType="text" Length="2"
                   SASFieldName="RDOMAIN"
@@ -8576,99 +7928,63 @@
                   Length="8"
                   SignificantDigits="2"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM02-07ef1661"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM02-07ef1661"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM03-75bb1efb"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM03-75bb1efb"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM04-6ea53ee8"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM04-6ea53ee8"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM05-03c16619"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM05-03c16619"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM06-37922360"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM06-37922360"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM07-ab3c81dd"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM07-ab3c81dd"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM08-acb0ddf7"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM08-acb0ddf7"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM09-06de86a5"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM09-06de86a5"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM10-186cc0aa"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM10-186cc0aa"
@@ -8676,55 +7992,35 @@
                   Length="8"
                   SignificantDigits="1"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM11-8f2b7da3"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM11-8f2b7da3"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM12-6085c027"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM12-6085c027"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM13-e1b137a0"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM13-e1b137a0"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACITM14-e608b3d5"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACITM14-e608b3d5"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="26 59 74 91 109 130"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSCO.QSORRES.QSCO.QSTESTCD.EQ.ACTOT-c30f25cb"
                   Name="QSORRES.QSCO.QSTESTCD.EQ.ACTOT-c30f25cb"
@@ -8740,11 +8036,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.CIBIC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="60 75 92 110 131"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM01-79097f23"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM01-79097f23"
@@ -8752,11 +8044,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM02-6dbb8849"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM02-6dbb8849"
@@ -8764,11 +8052,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM03-1a307f0a"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM03-1a307f0a"
@@ -8776,11 +8060,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM04-6f9d9251"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM04-6f9d9251"
@@ -8788,11 +8068,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM05-e1dbc8cd"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM05-e1dbc8cd"
@@ -8800,11 +8076,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM06-fc1eb899"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM06-fc1eb899"
@@ -8812,11 +8084,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM07-9d36a2f8"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM07-9d36a2f8"
@@ -8824,11 +8092,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM08-ad618acd"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM08-ad618acd"
@@ -8836,11 +8100,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM09-0ad852ea"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM09-0ad852ea"
@@ -8848,11 +8108,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM10-80b7f7f0"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM10-80b7f7f0"
@@ -8860,11 +8116,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM11-66e37911"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM11-66e37911"
@@ -8872,11 +8124,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM12-7752e7fe"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM12-7752e7fe"
@@ -8884,11 +8132,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM13-922715ea"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM13-922715ea"
@@ -8896,11 +8140,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM14-e0347bf3"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM14-e0347bf3"
@@ -8908,11 +8148,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM15-df9b613e"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM15-df9b613e"
@@ -8920,11 +8156,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM16-aee44dbf"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM16-aee44dbf"
@@ -8932,11 +8164,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM17-b0a58a2b"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM17-b0a58a2b"
@@ -8944,11 +8172,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM18-2e9d0b57"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM18-2e9d0b57"
@@ -8956,11 +8180,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM19-e8bfa2e2"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM19-e8bfa2e2"
@@ -8968,11 +8188,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM20-48effb52"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM20-48effb52"
@@ -8980,11 +8196,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="28 62 77 94 112 133 156"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM21-c4b8b8c5"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM21-c4b8b8c5"
@@ -8992,11 +8204,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM22-682dbb39"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM22-682dbb39"
@@ -9004,11 +8212,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM23-8a6df446"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM23-8a6df446"
@@ -9016,11 +8220,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM24-f4ca0108"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM24-f4ca0108"
@@ -9028,11 +8228,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM25-ebdf4a62"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM25-ebdf4a62"
@@ -9040,11 +8236,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM26-9c52986d"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM26-9c52986d"
@@ -9052,11 +8244,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM27-94a6b6d1"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM27-94a6b6d1"
@@ -9064,11 +8252,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM28-bab45343"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM28-bab45343"
@@ -9076,11 +8260,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM29-386540e1"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM29-386540e1"
@@ -9088,11 +8268,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM30-d2a1aeb8"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM30-d2a1aeb8"
@@ -9100,11 +8276,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM31-bbbb821d"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM31-bbbb821d"
@@ -9112,11 +8284,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM32-477763fa"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM32-477763fa"
@@ -9124,11 +8292,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM33-6801d771"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM33-6801d771"
@@ -9136,11 +8300,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM34-0fcba698"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM34-0fcba698"
@@ -9148,11 +8308,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM35-e4fcf374"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM35-e4fcf374"
@@ -9160,11 +8316,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM36-9b527681"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM36-9b527681"
@@ -9172,11 +8324,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM37-08398ad1"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM37-08398ad1"
@@ -9184,11 +8332,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM38-e2fde721"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM38-e2fde721"
@@ -9196,11 +8340,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM39-d09c6fe8"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM39-d09c6fe8"
@@ -9208,11 +8348,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSDA.QSORRES.QSDA.QSTESTCD.EQ.DAITM40-142b74c4"
                   Name="QSORRES.QSDA.QSTESTCD.EQ.DAITM40-142b74c4"
@@ -9220,11 +8356,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.NYNAN"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="29 63 78 95 113 134 157"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM01-899bf799"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM01-899bf799"
@@ -9232,11 +8364,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSB"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM02-057453cc"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM02-057453cc"
@@ -9244,11 +8372,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM03-c26cbc5e"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM03-c26cbc5e"
@@ -9256,11 +8380,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSB"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM04-b2d25c2d"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM04-b2d25c2d"
@@ -9268,11 +8388,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM05-aebf216c"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM05-aebf216c"
@@ -9280,11 +8396,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM06-a06f56fc"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM06-a06f56fc"
@@ -9292,11 +8404,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM07-c0c26c38"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM07-c0c26c38"
@@ -9304,11 +8412,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM08-7220fcd7"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM08-7220fcd7"
@@ -9316,11 +8420,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM09-e9f9a7a0"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM09-e9f9a7a0"
@@ -9328,11 +8428,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM10-a92f7298"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM10-a92f7298"
@@ -9340,11 +8436,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSB"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM11-c655bb55"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM11-c655bb55"
@@ -9352,11 +8444,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSA"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM12-4a0fc1e7"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM12-4a0fc1e7"
@@ -9364,11 +8452,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSB"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSHI.QSORRES.QSHI.QSTESTCD.EQ.MHITM13-a74df278"
                   Name="QSORRES.QSHI.QSTESTCD.EQ.MHITM13-a74df278"
@@ -9376,11 +8460,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESABSB"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="11"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM01-f076aa65"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM01-f076aa65"
@@ -9388,11 +8468,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE5V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM02-b4528d65"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM02-b4528d65"
@@ -9400,11 +8476,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE5V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM03-1b646522"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM03-1b646522"
@@ -9412,11 +8484,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE3V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM04-67bb7c46"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM04-67bb7c46"
@@ -9424,11 +8492,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE5V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM05-5ae61c9b"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM05-5ae61c9b"
@@ -9436,11 +8500,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE3V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSMM.QSORRES.QSMM.QSTESTCD.EQ.MMITM06-412d7fd7"
                   Name="QSORRES.QSMM.QSTESTCD.EQ.MMITM06-412d7fd7"
@@ -9448,11 +8508,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SCORE9V"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="10"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM01-899bcd25"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM01-899bcd25"
@@ -9460,11 +8516,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM01D-a557a9df"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM01D-a557a9df"
@@ -9472,11 +8524,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM01F-f799d60a"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM01F-f799d60a"
@@ -9484,22 +8532,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM01S-6af85933"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM01S-6af85933"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM01V-eb6e3b5e"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM01V-eb6e3b5e"
@@ -9507,11 +8547,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM02-325b83b9"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM02-325b83b9"
@@ -9519,11 +8555,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM02D-56290dd1"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM02D-56290dd1"
@@ -9531,11 +8563,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM02F-81afee29"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM02F-81afee29"
@@ -9543,22 +8571,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM02S-049be311"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM02S-049be311"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM02V-77229f8a"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM02V-77229f8a"
@@ -9566,11 +8586,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM03-dc77067e"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM03-dc77067e"
@@ -9578,11 +8594,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM03D-a05a56ec"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM03D-a05a56ec"
@@ -9590,11 +8602,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM03F-ef975640"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM03F-ef975640"
@@ -9602,22 +8610,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM03S-38009c1d"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM03S-38009c1d"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM03V-8f2d3cb1"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM03V-8f2d3cb1"
@@ -9625,11 +8625,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM04-660415ff"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM04-660415ff"
@@ -9637,11 +8633,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM04D-b216873a"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM04D-b216873a"
@@ -9649,11 +8641,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM04F-66d120d5"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM04F-66d120d5"
@@ -9661,22 +8649,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM04S-abcdde96"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM04S-abcdde96"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM04V-0f93a5fa"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM04V-0f93a5fa"
@@ -9684,11 +8664,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM05-19686ac8"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM05-19686ac8"
@@ -9696,11 +8672,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM05D-4ea9aded"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM05D-4ea9aded"
@@ -9708,11 +8680,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM05F-1daa6d82"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM05F-1daa6d82"
@@ -9720,22 +8688,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM05S-d0acf962"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM05S-d0acf962"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM05V-c12b717f"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM05V-c12b717f"
@@ -9743,11 +8703,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM06-f7ef22b6"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM06-f7ef22b6"
@@ -9755,11 +8711,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM06D-af232ba5"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM06D-af232ba5"
@@ -9767,11 +8719,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM06F-c65edc86"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM06F-c65edc86"
@@ -9779,22 +8727,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM06S-97a92a97"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM06S-97a92a97"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM06V-f993af34"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM06V-f993af34"
@@ -9802,11 +8742,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM07-2afbffb1"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM07-2afbffb1"
@@ -9814,11 +8750,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM07D-252f6b2e"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM07D-252f6b2e"
@@ -9826,11 +8758,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM07F-989c9a98"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM07F-989c9a98"
@@ -9838,22 +8766,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM07S-a4fefb49"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM07S-a4fefb49"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM07V-92f160e4"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM07V-92f160e4"
@@ -9861,11 +8781,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM08-35529ea5"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM08-35529ea5"
@@ -9873,11 +8789,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM08D-791c4267"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM08D-791c4267"
@@ -9885,11 +8797,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM08F-7fe633d1"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM08F-7fe633d1"
@@ -9897,22 +8805,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM08S-3e7b3d39"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM08S-3e7b3d39"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM08V-ad6ba661"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM08V-ad6ba661"
@@ -9920,11 +8820,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM09-d40d89ed"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM09-d40d89ed"
@@ -9932,11 +8828,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM09D-a23ddff5"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM09D-a23ddff5"
@@ -9944,11 +8836,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM09F-85de6f30"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM09F-85de6f30"
@@ -9956,22 +8844,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM09S-d0397280"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM09S-d0397280"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM09V-8093fd3d"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM09V-8093fd3d"
@@ -9979,11 +8859,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM10-8fd988a0"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM10-8fd988a0"
@@ -9991,11 +8867,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM10D-5664da08"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM10D-5664da08"
@@ -10003,11 +8875,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM10F-af08c6c3"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM10F-af08c6c3"
@@ -10015,22 +8883,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM10S-d489bcde"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM10S-d489bcde"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM10V-799833cf"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM10V-799833cf"
@@ -10038,11 +8898,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM11-7187f75f"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM11-7187f75f"
@@ -10050,11 +8906,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM11D-ed66597e"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM11D-ed66597e"
@@ -10062,11 +8914,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM11F-bab51256"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM11F-bab51256"
@@ -10074,22 +8922,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM11S-05a748c3"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM11S-05a748c3"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM11V-1f57b553"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM11V-1f57b553"
@@ -10097,11 +8937,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM12-8df6cdae"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM12-8df6cdae"
@@ -10109,11 +8945,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.PRESSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM12D-f3afb016"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM12D-f3afb016"
@@ -10121,11 +8953,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.DISTSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM12F-131e64c9"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM12F-131e64c9"
@@ -10133,22 +8961,14 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.FREQSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM12S-5bea5d5c"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM12S-5bea5d5c"
                   DataType="integer"
                   Length="8"
                   SASFieldName="QSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPITM12V-57865c40"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPITM12V-57865c40"
@@ -10156,11 +8976,7 @@
                   Length="8"
                   SASFieldName="QSORRES">
             <CodeListRef CodeListOID="CL.SEVSC"/>
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="27 38 44 54 61 69 76 84 89 93 101 111 132"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.QSNI.QSORRES.QSNI.QSTESTCD.EQ.NPTOT-5625ff13"
                   Name="QSORRES.QSNI.QSTESTCD.EQ.NPTOT-5625ff13"
@@ -10174,11 +8990,7 @@
                   DataType="integer"
                   Length="8"
                   SASFieldName="SCORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="8"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPAE.QVAL.SUPPAE.QNAM.EQ.TRTEMFL-1091fc31"
                   Name="QVAL.SUPPAE.QNAM.EQ.TRTEMFL-1091fc31"
@@ -10241,11 +9053,7 @@
                   DataType="integer"
                   Length="8"
                   SASFieldName="QVAL">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="106"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.SUPPLBCH.QVAL.SUPPLB.QNAM.EQ.ENDPOINT-6f8439fc"
                   Name="QVAL.SUPPLB.QNAM.EQ.ENDPOINT-6f8439fc"
@@ -10485,12 +9293,7 @@
                   Length="8"
                   SignificantDigits="1"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES.VS.VSTESTCD.EQ.HEIGHT-9064ed8b"
                   Name="VSORRES.VS.VSTESTCD.EQ.HEIGHT-9064ed8b"
@@ -10498,11 +9301,7 @@
                   Length="8"
                   SignificantDigits="2"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="16"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES.VS.VSTESTCD.EQ.PULSE-740ee232"
                   Name="VSORRES.VS.VSTESTCD.EQ.PULSE-740ee232"
@@ -10510,12 +9309,7 @@
                   Length="8"
                   SignificantDigits="1"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES.VS.VSTESTCD.EQ.SYSBP-89104de9"
                   Name="VSORRES.VS.VSTESTCD.EQ.SYSBP-89104de9"
@@ -10523,12 +9317,7 @@
                   Length="8"
                   SignificantDigits="1"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES.VS.VSTESTCD.EQ.TEMP-b730cbdf"
                   Name="VSORRES.VS.VSTESTCD.EQ.TEMP-b730cbdf"
@@ -10536,12 +9325,7 @@
                   Length="8"
                   SignificantDigits="2"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef"
-                                  PageRefs="10 23 30 33 39 45 50 55 64 70 79 85 96 102 114 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <ItemDef OID="IT.VS.VSORRES.VS.VSTESTCD.EQ.WEIGHT-f82b30fe"
                   Name="VSORRES.VS.VSTESTCD.EQ.WEIGHT-f82b30fe"
@@ -10549,11 +9333,7 @@
                   Length="8"
                   SignificantDigits="2"
                   SASFieldName="VSORRES">
-            <def:Origin Type="CRF">
-               <def:DocumentRef leafID="LF.blankcrf">
-                  <def:PDFPageRef Type="PhysicalRef" PageRefs="16 30 39 45 55 64 70 79 85 96 102 135"/>
-               </def:DocumentRef>
-            </def:Origin>
+            <def:Origin Type="CRF"/>
          </ItemDef>
          <CodeList OID="CL.AECAUS" Name="AECAUS" DataType="text">
             <CodeListItem CodedValue="NONE" OrderNumber="1">
@@ -14197,7 +12977,7 @@ If SE.SESTDTC &lt;= LBDTC &lt; SE.SEENDTC, then use that EPOCH.</TranslatedText>
                <TranslatedText xml:lang="en">Standard unit defined per parameter for summarizing analysis</TranslatedText>
             </Description>
          </def:CommentDef>
-         <def:leaf ID="LF.blankcrf" xlink:href="blankcrf.pdf">
+         <def:leaf ID="LF.blankcrf" xlink:href="cdiscpilot_docs/annotated_crf.pdf">
             <def:title>Annotated Case Report Form</def:title>
          </def:leaf>
       </MetaDataVersion>

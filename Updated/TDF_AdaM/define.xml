@@ -6,28 +6,20 @@
      xmlns:def="http://www.cdisc.org/ns/def/v2.0"
      ODMVersion="1.3.2"
      FileType="Snapshot"
-     FileOID="CDISCPILOT_Updated.CDISC ADaM.2.1"
-     CreationDateTime="2018-09-20T10:20:11">
-   <Study OID="CDISCPILOT_Updated.CDISC ADaM.2.1">
+     FileOID="TDF_ADaM.CDISC ADaM.2.1"
+     CreationDateTime="2018-11-19T08:44:02">
+   <Study OID="TDF_ADaM.CDISC ADaM.2.1">
       <GlobalVariables>
-         <StudyName>CDISCPILOT_Updated</StudyName>
-         <StudyDescription>CDISCPILOT_Updated Data Definition</StudyDescription>
-         <ProtocolName>CDISCPILOT</ProtocolName>
+         <StudyName>TDF_ADaM</StudyName>
+         <StudyDescription>Test datasets created by updating existing CDISCPILOT ADaM datasets</StudyDescription>
+         <ProtocolName>TDF_Datasets</ProtocolName>
       </GlobalVariables>
-      <MetaDataVersion OID="MDV.CDISCPILOT_Updated.CDISC ADaM.2.1"
-                       Name="Study CDISCPILOT_Updated Data Definitions"
-                       Description="CDISCPILOT_Updated Data Definition"
+      <MetaDataVersion OID="MDV.TDF_ADaM.CDISC ADaM.2.1" Name="Study TDF_ADaM Data Definitions"
+                       Description="Test datasets created by updating existing CDISCPILOT ADaM datasets"
                        def:DefineVersion="2.0.0"
                        def:StandardName="CDISC ADaM"
                        def:StandardVersion="2.1">
          <def:SupplementalDoc>
-            <def:DocumentRef leafID="LF.Figure_14-1"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_10.1.1"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_10.1.2"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_10.2"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_11.2"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_11.5"/>
-            <def:DocumentRef leafID="LF.SAP_SEC_9.1"/>
             <def:DocumentRef leafID="LF.Suppdoc"/>
             <def:DocumentRef leafID="LF.Table_14-1.01"/>
             <def:DocumentRef leafID="LF.Table_14-1.02"/>
@@ -42,6 +34,13 @@
             <def:DocumentRef leafID="LF.Table_14-6.04"/>
             <def:DocumentRef leafID="LF.Table_14-6.05"/>
             <def:DocumentRef leafID="LF.Table_14-6.06"/>
+            <def:DocumentRef leafID="LF.Figure_14-1"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_10.1.1"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_10.1.2"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_10.2"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_11.2"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_11.5"/>
+            <def:DocumentRef leafID="LF.SAP_SEC_9.1"/>
             <def:DocumentRef leafID="LF.at14-5-02.sas"/>
          </def:SupplementalDoc>
          <def:WhereClauseDef OID="WC.ADLBC.A1HI.EQ.ALB-fe6c9cc9">
@@ -25218,90 +25217,70 @@
                <TranslatedText xml:lang="en">LB.VISITNUM</TranslatedText>
             </Description>
          </MethodDef>
-         <def:leaf ID="LF.Figure_14-1"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=151">
-            <def:title>Figure 14-1</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_10.1.1"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=429">
-            <def:title>SAP Section 10.1.1</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_10.1.2"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=430">
-            <def:title>SAP Section 10.1.1</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_10.2"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=430">
-            <def:title>SAP Section 10.2</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_11.2"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=430">
-            <def:title>SAP Section 11.2</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_11.5"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=432">
-            <def:title>SAP Section 11.5</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.SAP_SEC_9.1"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=428">
-            <def:title>SAP Section 9.1</def:title>
-         </def:leaf>
-         <def:leaf ID="LF.Suppdoc" xlink:href="dataguide.pdf">
+         <def:leaf ID="LF.Suppdoc" xlink:href="cdiscpilot_docs/dataguide.pdf">
             <def:title>Data Guide</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-1.01"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=43">
+         <def:leaf ID="LF.Table_14-1.01" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=43">
             <def:title>Table 14-1.01</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-1.02"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=44">
+         <def:leaf ID="LF.Table_14-1.02" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=44">
             <def:title>Table 14-1.02</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-2.01"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=46">
+         <def:leaf ID="LF.Table_14-2.01" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=46">
             <def:title>Table 14-2.01</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-3.01"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=49">
+         <def:leaf ID="LF.Table_14-3.01" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=49">
             <def:title>Table 14-3.01</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-3.02"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=50">
+         <def:leaf ID="LF.Table_14-3.02" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=50">
             <def:title>Table 14-3.02</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-3.12"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=60">
+         <def:leaf ID="LF.Table_14-3.12" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=60">
             <def:title>Table 14-3.12</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-5.02"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=79">
+         <def:leaf ID="LF.Table_14-5.02" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=79">
             <def:title>Table 14-5.02</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.01"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=80">
+         <def:leaf ID="LF.Table_14-6.01" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=80">
             <def:title>Table 14-6.01</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.02"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=95">
+         <def:leaf ID="LF.Table_14-6.02" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=95">
             <def:title>Table 14-6.02</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.03"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=97">
+         <def:leaf ID="LF.Table_14-6.03" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=97">
             <def:title>Table 14-6.03</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.04"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=99">
+         <def:leaf ID="LF.Table_14-6.04" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=99">
             <def:title>Table 14-6.04</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.05"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=132">
+         <def:leaf ID="LF.Table_14-6.05" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=132">
             <def:title>Table 14-6.05</def:title>
          </def:leaf>
-         <def:leaf ID="LF.Table_14-6.06"
-                   xlink:href="../../../../../53-clin-stud-rep/535-rep-effic-safety-stud/5351-stud-rep-contr/cdiscpilot01/cdiscpilot01.pdf#page=138">
+         <def:leaf ID="LF.Table_14-6.06" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=138">
             <def:title>Table 14-6.06</def:title>
          </def:leaf>
-         <def:leaf ID="LF.at14-5-02.sas" xlink:href="../programs/at14-5-02.sas">
+         <def:leaf ID="LF.Figure_14-1" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=151">
+            <def:title>Figure 14-1</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_10.1.1" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=429">
+            <def:title>SAP Section 10.1.1</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_10.1.2" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=430">
+            <def:title>SAP Section 10.1.1</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_10.2" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=430">
+            <def:title>SAP Section 10.2</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_11.2" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=430">
+            <def:title>SAP Section 11.2</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_11.5" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=432">
+            <def:title>SAP Section 11.5</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.SAP_SEC_9.1" xlink:href="cdiscpilot_docs/cdiscpilot01.pdf#page=428">
+            <def:title>SAP Section 9.1</def:title>
+         </def:leaf>
+         <def:leaf ID="LF.at14-5-02.sas" xlink:href="cdiscpilot_docs/at14-5-02.sas">
             <def:title>at14-5-02.sas</def:title>
          </def:leaf>
       </MetaDataVersion>

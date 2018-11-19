@@ -1,57 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:def="http://www.cdisc.org/ns/def/v2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en"
-  exclude-result-prefixes="def xlink odm xsi">
+  xmlns:def="http://www.cdisc.org/ns/def/v2.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:arm="http://www.cdisc.org/ns/arm/v1.0" xml:lang="en"
+  exclude-result-prefixes="def xlink odm xsi arm">
   <xsl:output method="html" indent="yes" encoding="utf-8" doctype-system="http://www.w3.org/TR/html4/strict.dtd"
     doctype-public="-//W3C//DTD HTML 4.01//EN" version="4.0"/>
 
 
-  <!--
-			Comments will be displayed, unless the displayComments parameter has a value of 0.
-      This parameter can be set in the XSLT processor. 
-		-->
+  <!-- Methods will be displayed, unless the displayMethods parameter has a value of 0.
+       This parameter can be set in the XSLT processor. 
+	-->
+  <xsl:param name="displayMethods"/>
+
+  <!-- Comments will be displayed, unless the displayComments parameter has a value of 0.
+       This parameter can be set in the XSLT processor. 
+	-->
   <xsl:param name="displayComments"/>
   
-
-  <!-- ****************************************************************************************************** -->
-  <!-- File:   define2-0-0.xsl                                                                                -->
-  <!-- Description: This stylesheet works with the DefineXML 2.0.0 specification.                             -->
-  <!-- This document is compliant with XSLT Version 1.0 specification (1999).                                 -->
-  <!-- Author: CDISC XML Technologies Team (Lex Jansen)                                                       -->
-  <!-- Date:   2013-03-04 (Original version)                                                                  -->
-  <!--  Changes:                                                                                              -->
-  <!--       2013-04-24: Fixed issue in displayISO8601 template when ItemDef/@Name has length=1               -->
-  <!--                                                                                                        -->
-  <!-- ****************************************************************************************************** -->
-  <xsl:variable name="g_stylesheetVersion" select="'2013-04-24'"/>
-  <!-- ****************************************************************************************************** -->
+  <!-- ********************************************************************************************************* -->
+  <!-- File:   define2-0-0.xsl                                                                                   -->
+  <!-- Description: This stylesheet works with the Define-XML 2.0.0 specification, including the Analysis        -->
+  <!--              Results Metadata v1.0 extension.                                                             -->
+  <!-- Author: Lex Jansen (CDISC XML Technologies Team, ADaM Metadata Team)                                      -->
+  <!-- Date:   2013-03-04 (Original version)                                                                     -->
+  <!-- Changes:                                                                                                  -->
+  <!--   2015-01-16 - Added Study metadata display                                                               -->                                    
+  <!--              - Improved Analysis Parameter(s) display                                                     -->
+  <!--   2014-08-29 - Added displayMethods parameter.                                                            -->
+  <!--              - Added link when href has a value in ExternalCodeList (AppendixExternalCodeLists template). -->
+  <!--              - Many improvements for linking to external PDF documents with physical page references or   -->
+  <!--                named destinations.                                                                        -->
+  <!--   2013-12-12 - Fixed with non-existing CodeList being linked.                                             -->
+  <!--   2013-08-10 - Fixed issue in value level where clause display.                                           -->
+  <!--              - Removed Comment sorting.                                                                   -->
+  <!--              - Added Analysis Results Metadata.                                                           -->
+  <!--   2013-04-24 - Fixed issue in displayISO8601 template when ItemDef/@Name has length=1.                    -->
+  <!--   2013-03-04 - Initial version.                                                                           -->
+  <!--                                                                                                           -->  
+  <!--   The CDISC Define-XML standard does not dictate how a stylesheet should display a Define-XML v2 file.    -->
+  <!--   This example stylesheet can be altered to satisfy alternate visualization needs.                        -->
+  <!-- ********************************************************************************************************* -->
   
-  <!--
-			Global Variables
-		-->
+  <!-- Global Variables -->
+  <xsl:variable name="g_stylesheetVersion" select="'2015-01-16'"/>
+
   <!-- XSLT 1.0 does not support the function 'upper-case()'
-    so we need to use the 'translate() function, which uses the variables $lowercase and $uppercase.
-    Remark that this is not a XSLT problem, but a problem that browsers like IE do still not support XSLT 2.0 yet -->
-  <xsl:variable name="g_lowercase" select="'abcdefghijklmnopqrstuvwxyz'"/>
-  <xsl:variable name="g_uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
+       so we need to use the 'translate() function, which uses the variables $lowercase and $uppercase.
+       Remark that this is not a XSLT problem, but a problem that browsers like IE do still not support XSLT 2.0 yet -->
+  <xsl:variable name="LOWERCASE" select="'abcdefghijklmnopqrstuvwxyz'"/>
+  <xsl:variable name="UPPERCASE" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
   
-  <xsl:variable name="g_xndMetaDataVersion" select="/odm:ODM/odm:Study[1]/odm:MetaDataVersion[1]"/>
-  <xsl:variable name="g_seqItemGroupDefs" select="$g_xndMetaDataVersion/odm:ItemGroupDef"/>
-  <xsl:variable name="g_seqItemDefs" select="$g_xndMetaDataVersion/odm:ItemDef"/>
-  <xsl:variable name="g_seqCodeLists" select="$g_xndMetaDataVersion/odm:CodeList"/>
-  <xsl:variable name="g_seqValueListDefs" select="$g_xndMetaDataVersion/def:ValueListDef"/>
-  <xsl:variable name="g_seqMethodDefs" select="$g_xndMetaDataVersion/odm:MethodDef"/>
-  <xsl:variable name="g_seqCommentDefs" select="$g_xndMetaDataVersion/def:CommentDef"/>
-  <xsl:variable name="g_seqWhereClauseDefs" select="$g_xndMetaDataVersion/def:WhereClauseDef"/>
-  <xsl:variable name="g_seqleafs" select="$g_xndMetaDataVersion/def:leaf"/>
-  <xsl:variable name="g_StandardName" select="$g_xndMetaDataVersion/@def:StandardName"/>
-  <xsl:variable name="g_StandardVersion" select="$g_xndMetaDataVersion/@def:StandardVersion"/>
-
   <xsl:variable name="REFTYPE_PHYSICALPAGE">PhysicalRef</xsl:variable>
   <xsl:variable name="REFTYPE_NAMEDDESTINATION">NamedDestination</xsl:variable>
 
-  <!--We need to be able to distuinguish bewteen Tabulation and Analysis datasets -->  
+  <xsl:variable name="g_StudyName" select="/odm:ODM/odm:Study[1]/odm:GlobalVariables[1]/odm:StudyName"/>
+  <xsl:variable name="g_StudyDescription" select="/odm:ODM/odm:Study[1]/odm:GlobalVariables[1]/odm:StudyDescription"/>
+  <xsl:variable name="g_ProtocolName" select="/odm:ODM/odm:Study[1]/odm:GlobalVariables[1]/odm:ProtocolName"/>
+  
+  <xsl:variable name="g_MetaDataVersion" select="/odm:ODM/odm:Study[1]/odm:MetaDataVersion[1]"/>
+  <xsl:variable name="g_MetaDataVersionName" select="$g_MetaDataVersion/@Name"/>
+  <xsl:variable name="g_MetaDataVersionDescription" select="$g_MetaDataVersion/@Description"/>
+  <xsl:variable name="g_DefineVersion" select="$g_MetaDataVersion/@def:DefineVersion"/>
+  <xsl:variable name="g_StandardName" select="$g_MetaDataVersion/@def:StandardName"/>
+  <xsl:variable name="g_StandardVersion" select="$g_MetaDataVersion/@def:StandardVersion"/>
+
+  <xsl:variable name="g_seqItemGroupDefs" select="$g_MetaDataVersion/odm:ItemGroupDef"/>
+  <xsl:variable name="g_seqItemDefs" select="$g_MetaDataVersion/odm:ItemDef"/>
+  <xsl:variable name="g_seqCodeLists" select="$g_MetaDataVersion/odm:CodeList"/>
+  <xsl:variable name="g_seqValueListDefs" select="$g_MetaDataVersion/def:ValueListDef"/>
+  <xsl:variable name="g_seqMethodDefs" select="$g_MetaDataVersion/odm:MethodDef"/>
+  <xsl:variable name="g_seqCommentDefs" select="$g_MetaDataVersion/def:CommentDef"/>
+  <xsl:variable name="g_seqWhereClauseDefs" select="$g_MetaDataVersion/def:WhereClauseDef"/>
+  <xsl:variable name="g_seqleafs" select="$g_MetaDataVersion/def:leaf"/>
+  
+  <!--We need to be able to distuinguish between Tabulation and Analysis datasets -->  
   <xsl:variable name="g_nItemGroupDefs" select="count($g_seqItemGroupDefs)"/>
   <xsl:variable name="g_nItemGroupDefsAnalysis" select="count($g_seqItemGroupDefs[@Purpose='Analysis'])"/>
   <xsl:variable name="g_nItemGroupDefsTabulation" select="count($g_seqItemGroupDefs[@Purpose='Tabulation'])"/>
@@ -83,8 +106,7 @@
       <head>
         <meta http-equiv="Content-Script-Type" content="text/javascript"/>
         <meta http-equiv="Content-Style-Type" content="text/css"/>
-        <title> Study <xsl:value-of select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/>, Data
-          Definitions</title>
+        <title> Study <xsl:value-of select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/>, Data Definitions</title>
 
         <xsl:call-template name="GenerateJavaScript"/>
         <xsl:call-template name="GenerateCSS"/>
@@ -114,16 +136,14 @@
         <!-- **************************************************** -->
         <!-- **************  Annotated CRF    ******************* -->
         <!-- **************************************************** -->
-        <xsl:if test="$g_xndMetaDataVersion/def:AnnotatedCRF">
-          <xsl:for-each select="$g_xndMetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
+        <xsl:if test="$g_MetaDataVersion/def:AnnotatedCRF">
+          <xsl:for-each select="$g_MetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
             <li class="hmenu-item">
               <span class="hmenu-bullet">+</span>
               <xsl:variable name="leafIDs" select="@leafID"/>
               <xsl:variable name="leaf" select="../../def:leaf[@ID=$leafIDs]"/>
               <a class="tocItem">
-                <xsl:attribute name="href">
-                  <xsl:value-of select="$leaf/@xlink:href"/>
-                </xsl:attribute>
+                <xsl:attribute name="href"><xsl:value-of select="$leaf/@xlink:href"/></xsl:attribute>
                 <xsl:value-of select="$leaf/def:title"/>
               </a>
             </li>
@@ -133,23 +153,44 @@
         <!-- **************************************************** -->
         <!-- **************  Supplemental Doc ******************* -->
         <!-- **************************************************** -->
-        <xsl:if test="$g_xndMetaDataVersion/def:SupplementalDoc">
-          <xsl:for-each select="$g_xndMetaDataVersion/def:SupplementalDoc/def:DocumentRef">
+        <xsl:if test="$g_MetaDataVersion/def:SupplementalDoc">
+          <xsl:for-each select="$g_MetaDataVersion/def:SupplementalDoc/def:DocumentRef">
             <li class="hmenu-item">
               <span class="hmenu-bullet">+</span>
               <xsl:variable name="leafIDs" select="@leafID"/>
               <xsl:variable name="leaf" select="../../def:leaf[@ID=$leafIDs]"/>
               <a class="tocItem">
-                <xsl:attribute name="href">
-                  <xsl:value-of select="$leaf/@xlink:href"/>
-                </xsl:attribute>
+                <xsl:attribute name="href"><xsl:value-of select="$leaf/@xlink:href"/></xsl:attribute>
                 <xsl:value-of select="$leaf/def:title"/>
               </a>
             </li>
           </xsl:for-each>
         </xsl:if>
 
-        <!-- **************************************************** -->
+      	<!-- **************************************************** -->
+      	<!-- ************ Analysis Results Metadata ************* -->
+      	<!-- **************************************************** -->
+      	
+      	<xsl:if test="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays">
+      		<li class="hmenu-submenu" >
+      			<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span>
+      			<a class="tocItem" href="#ARM_Table_Summary" >Analysis Results Metadata</a>
+      			<ul> 
+      				<xsl:for-each select="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays/arm:ResultDisplay">
+      					<li class="hmenu-item">
+      						<span class="hmenu-bullet">-</span>
+      						<a class="tocItem">
+      						  <xsl:attribute name="href">#ARD.<xsl:value-of select="@OID"/></xsl:attribute>
+      						  <xsl:attribute name="title"><xsl:value-of select="./odm:Description/odm:TranslatedText"/></xsl:attribute>
+      						  <xsl:value-of select="@Name"/>
+      						</a>
+      					</li>
+      				</xsl:for-each>
+      			</ul>
+      		</li>
+      	</xsl:if>
+      	
+      	<!-- **************************************************** -->
         <!-- ************** Datasets **************************** -->
         <!-- **************************************************** -->
         <li class="hmenu-submenu">
@@ -240,7 +281,6 @@
                     <xsl:text> [</xsl:text>
                     <xsl:value-of select="$valueListRef/../@Name"/>
                     <xsl:text>]</xsl:text>
-
                   </xsl:element>
                 </li>
               </xsl:for-each>
@@ -305,32 +345,34 @@
         <!-- ****************** Methods ************************* -->
         <!-- **************************************************** -->
 
-        <xsl:if test="$g_seqMethodDefs">
-          <li class="hmenu-submenu">
-            <span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span>
-            <a class="tocItem" href="#compmethod">
-              <xsl:choose>
-                <xsl:when test="$g_ItemGroupDefPurpose='Tabulation'">
-                  <xsl:text>Computational Algorithms</xsl:text>
-                </xsl:when>
-                <xsl:when test="$g_ItemGroupDefPurpose='Analysis'">
-                  <xsl:text>Analysis Derivations</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>Methods</xsl:otherwise>
-              </xsl:choose>
-            </a>
-            <ul>
-              <xsl:for-each select="$g_seqMethodDefs">
-                <li class="hmenu-item">
-                  <span class="hmenu-bullet">-</span>
-                  <a class="tocItem">
-                    <xsl:attribute name="href">#MT.<xsl:value-of select="@OID"/></xsl:attribute>
-                    <xsl:value-of select="@Name"/>
-                  </a>
-                </li>
-              </xsl:for-each>
-            </ul>
-          </li>
+        <xsl:if test="$displayMethods != '0'">
+          <xsl:if test="$g_seqMethodDefs">
+            <li class="hmenu-submenu">
+              <span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span>
+              <a class="tocItem" href="#compmethod">
+                <xsl:choose>
+                  <xsl:when test="$g_ItemGroupDefPurpose='Tabulation'">
+                    <xsl:text>Computational Algorithms</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$g_ItemGroupDefPurpose='Analysis'">
+                    <xsl:text>Analysis Derivations</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>Methods</xsl:otherwise>
+                </xsl:choose>
+              </a>
+              <ul>
+                <xsl:for-each select="$g_seqMethodDefs">
+                  <li class="hmenu-item">
+                    <span class="hmenu-bullet">-</span>
+                    <a class="tocItem">
+                      <xsl:attribute name="href">#MT.<xsl:value-of select="@OID"/></xsl:attribute>
+                      <xsl:value-of select="@Name"/>
+                    </a>
+                  </li>
+                </xsl:for-each>
+              </ul>
+            </li>
+          </xsl:if>
         </xsl:if>
 
         <!-- **************************************************** -->
@@ -361,6 +403,9 @@
    </div>
     <!-- end of menu -->
 
+
+
+    <!-- start of main -->
     <div id="main">
 
       <div class="docinfo">
@@ -375,47 +420,86 @@
         <span class="error">It is expected that all ItemGroups have Purpose='Tabulation' or all ItemGroups have Purpose='Analysis'.</span>
       </xsl:if>
         
-
+      <!-- Display Study metadata -->
+      <div class="study">
+        <dl class="multiple-table">
+          <dt>Standard</dt><dd><xsl:value-of select="$g_StandardName"/>&#160;<xsl:value-of select="$g_StandardVersion"/></dd>
+          <dt>Study Name</dt><dd><xsl:value-of select="$g_StudyName"/></dd>
+          <dt>Study Description</dt><dd><xsl:value-of select="$g_StudyDescription"/></dd>
+          <dt>Protocol Name</dt><dd><xsl:value-of select="$g_ProtocolName"/></dd>
+          <dt>Metadata Name</dt><dd><xsl:value-of select="$g_MetaDataVersionName"/></dd>
+          <xsl:if test="$g_MetaDataVersionDescription">
+            <dt>Metadata Description</dt><dd><xsl:value-of select="$g_MetaDataVersionDescription"/></dd>
+          </xsl:if>
+        </dl>  
+      </div>
+ 
       <!-- ***************************************************************** -->
+    	<!-- Create the ADaM Results Metadata Tables                           -->
+    	<!-- ***************************************************************** -->
+    	
+    	<xsl:if test="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays">
+    		
+    		<xsl:call-template name="AnalysisResultsSummary"/>
+    	  <xsl:call-template name="lineBreak"/>
+    	  
+    		
+    		<!-- ***************************************************************** -->
+    		<!-- Create the ADaM Results Metadata Detail Tables                    -->
+    		<!-- ***************************************************************** -->
+
+    		<xsl:call-template name="AnalysisResultsDetails"/>
+    	  <xsl:call-template name="lineBreak"/>
+    	  
+    	</xsl:if>
+
+    	<!-- ***************************************************************** -->
       <!-- Create the Data Definition Tables                                 -->
       <!-- ***************************************************************** -->
 
-        <a id="{$g_ItemGroupDefPurpose}_Datasets_Table"/>
-        <h1 class="invisible"><xsl:value-of select="$g_ItemGroupDefPurpose"/> Data Definition Tables</h1>
-        <div class="containerbox" style="page-break-after: always;">
+      <a id="{$g_ItemGroupDefPurpose}_Datasets_Table"/>
+      
+      <h1 class="invisible"><xsl:value-of select="$g_ItemGroupDefPurpose"/> Datasets for Study <xsl:value-of
+        select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/> (<xsl:value-of
+          select="$g_StandardName"/>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="$g_StandardVersion"/>)</h1>
+      <div class="containerbox" style="page-break-after: always;">
 
-          <table summary="Data Definition Tables">
-            <caption><xsl:value-of select="$g_ItemGroupDefPurpose"/> Datasets for Study <xsl:value-of
-                select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/> (<xsl:value-of
-                  select="$g_StandardName"/>
-              <xsl:text> </xsl:text>
-              <xsl:value-of select="$g_StandardVersion"/>)</caption>
-            <tr class="header">
-              <th scope="col">Dataset</th>
-              <th scope="col">Description</th>
-              <th scope="col">Class</th>
-              <th scope="col">Structure</th>
-              <th scope="col">Purpose</th>
-              <th scope="col">Keys</th>
-              <th scope="col">Location</th>
-              <th scope="col">Documentation</th>
-            </tr>
-            <xsl:for-each select="$g_seqItemGroupDefs">
-                  <xsl:call-template name="ItemGroupDefs"/>
-            </xsl:for-each>
-          </table>
+        <table summary="Data Definition Tables">
+          <caption class="header"><xsl:value-of select="$g_ItemGroupDefPurpose"/> Datasets for Study <xsl:value-of
+              select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/> (<xsl:value-of
+                select="$g_StandardName"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="$g_StandardVersion"/>)</caption>
+          <tr class="header">
+            <th scope="col">Dataset</th>
+            <th scope="col">Description</th>
+            <th scope="col">Class</th>
+            <th scope="col">Structure</th>
+            <th scope="col">Purpose</th>
+            <th scope="col">Keys</th>
+            <th scope="col">Location</th>
+            <th scope="col">Documentation</th>
+          </tr>
+          <xsl:for-each select="$g_seqItemGroupDefs">
+            <xsl:call-template name="ItemGroupDefs"/>
+          </xsl:for-each>
+        </table>
 
-        </div>
+      </div>
 
-        <xsl:call-template name="linktop"/>
-
+      <xsl:call-template name="linkTop"/>
+      <xsl:call-template name="lineBreak"/>
+      
       <!-- ***************************************************************** -->
       <!-- Detail for the ADaM Data Definition Tables (Analysis)             -->
       <!-- ***************************************************************** -->
 
       <xsl:for-each select="$g_seqItemGroupDefs[@Purpose='Analysis']">
         <xsl:call-template name="ItemRefADaM"/>
-        <xsl:call-template name="linktop"/>
+        <xsl:call-template name="linkTop"/>
+        <xsl:call-template name="lineBreak"/>
       </xsl:for-each>
 
       <!-- ***************************************************************** -->
@@ -425,8 +509,9 @@
       <!-- ***************************************************************** -->
 
       <xsl:for-each select="$g_seqItemGroupDefs[@Purpose!='Analysis']">
-        <xsl:call-template name="ItemRefSDTM"/>
-        <xsl:call-template name="linktop"/>
+        <xsl:call-template name="ItemRefSDS"/>
+        <xsl:call-template name="linkTop"/>
+        <xsl:call-template name="lineBreak"/>
       </xsl:for-each>
 
       <!-- ****************************************************  -->
@@ -443,7 +528,9 @@
       <!-- ***************************************************************** -->
       <!-- Create the Derivations                                            -->
       <!-- ***************************************************************** -->
-      <xsl:call-template name="AppendixMethods"/>
+      <xsl:if test="$displayMethods != '0'">
+        <xsl:call-template name="AppendixMethods"/>
+      </xsl:if>
 
       <!-- ***************************************************************** -->
       <!-- Create the Comments                                               -->
@@ -452,10 +539,427 @@
         <xsl:call-template name="AppendixComments"/>
       </xsl:if>
 
-      <!-- end of main -->
     </div>
-
+    <!-- end of main -->
+    
   </xsl:template>
+
+
+  <!-- **************************************************** -->
+  <!-- Analysis Results Summary                             -->
+  <!-- **************************************************** -->
+  <xsl:template name="AnalysisResultsSummary">
+    <div class="containerbox" style="page-break-after: always;">
+      <h1 id="ARM_Table_Summary">Analysis Results Metadata (Summary) for Study <xsl:value-of select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/></h1>
+      <table class="arm-table" summary="Analysis Results Metadata (Summary)">
+        <xsl:for-each select="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays/arm:ResultDisplay">
+          <tr>
+            <td>
+              <xsl:variable name="DisplayOID" select="@OID"/>
+              <xsl:variable name="DisplayName" select="@Name"/>
+              <xsl:variable name="Display" select="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays/arm:ResultDisplay[@OID=$DisplayOID]"/>
+              <a>
+                <xsl:attribute name="href">#ARD.<xsl:value-of select="$DisplayOID"/></xsl:attribute>
+                <xsl:value-of select="$DisplayName"/>
+              </a>
+              <span class="title">
+                <xsl:value-of select="./odm:Description/odm:TranslatedText"/>
+              </span>
+              <!-- if there is  more than one analysis result, list each linked to the respective rows in the detail tables-->
+              <xsl:for-each select="./arm:AnalysisResult">
+                <xsl:variable name="AnalysisResultID" select="./@OID"/>
+                <xsl:variable name="AnalysisResult" select="$Display/arm:AnalysisResults[@OID=$AnalysisResultID]"/>
+                <p class="summaryresult">
+                  <a>
+                    <xsl:attribute name="href">#AR.<xsl:value-of select="$AnalysisResultID"/></xsl:attribute>
+                    <xsl:value-of select="./odm:Description/odm:TranslatedText"/>
+                  </a>
+                </p>
+              </xsl:for-each>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </table>
+    </div>  
+  </xsl:template>
+  
+  <!-- **************************************************** -->
+  <!--  Analysis Results Details                            -->
+  <!-- **************************************************** -->
+  <xsl:template name="AnalysisResultsDetails">
+      <h1>Analysis Results Metadata (Detail) for Study <xsl:value-of select="/odm:ODM/odm:Study/odm:GlobalVariables/odm:StudyName"/></h1>
+
+      <xsl:for-each select="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays/arm:ResultDisplay">
+
+        <div class="containerbox" style="page-break-after: always;">
+          <xsl:variable name="DisplayOID" select="@OID"/>
+          <xsl:variable name="DisplayName" select="@Name"/>
+          <xsl:variable name="Display" select="/odm:ODM/odm:Study/odm:MetaDataVersion/arm:AnalysisResultDisplays/arm:ResultDisplay[@OID=$DisplayOID]"/>
+  
+          <a>
+            <xsl:attribute name="id">ARD.<xsl:value-of select="$DisplayOID"/></xsl:attribute>
+          </a>
+  
+          <xsl:element name="table">
+            
+            <xsl:attribute name="summary">Analysis Results Metadata for <xsl:value-of select="$DisplayName"/> (detail)</xsl:attribute>
+            <caption>
+              <xsl:value-of select="$DisplayName"/>
+            </caption>
+  
+            <tr>
+              <th scope="col" class="label">Display</th>
+              <th scope="col">
+  
+                <xsl:for-each select="def:DocumentRef">
+                  <xsl:variable name="leafID" select="@leafID"/>
+                  <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
+                    
+                  <xsl:variable name="title" select="$leaf/def:title"/>
+                  <xsl:variable name="href" select="$leaf/@xlink:href"/>
+                  <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+                  <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+                  <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+                  <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                  
+                  <span class="linebreakcell">
+                    <xsl:call-template name="createHyperLink">
+                      <xsl:with-param name="href" select="$href"/>
+                      <xsl:with-param name="PageRefType" select="$PageRefType"/>
+                      <xsl:with-param name="PageRefs" select="$PageRefs"/>
+                      <xsl:with-param name="PageFirst" select="$PageFirst"/>
+                      <xsl:with-param name="PageLast" select="$PageLast"/>
+                      <xsl:with-param name="title" select="$title"/>
+                  </xsl:call-template>
+                  </span>
+                    
+                </xsl:for-each>
+                <span class="title"><xsl:value-of select="$Display/odm:Description/odm:TranslatedText"/></span>
+              </th>
+            </tr>
+  
+            <!--
+                  Analysis Results
+                -->
+  
+            <xsl:for-each select="$Display/arm:AnalysisResult">
+              <xsl:variable name="AnalysisResultOID" select="@OID"/>
+              <xsl:variable name="AnalysisResult" select="$Display/arm:AnalysisResult[@OID=$AnalysisResultOID]"/>
+              <tr class="analysisresult">
+                <td>Analysis Result</td>
+                <td>
+                  <!--  add an identifier to Analysis Results xsl:value-of select="OID"/-->
+                  <span>
+                    <xsl:attribute name="id">AR.<xsl:value-of select="$AnalysisResultOID"/></xsl:attribute>
+                    <xsl:value-of select="odm:Description/odm:TranslatedText"/>
+                  </span>
+                </td>
+              </tr>
+  
+              <!--
+                  Get the analysis parameter code from the where clause,
+                  and then get the parameter from the decode in the codelist. 
+                -->
+  
+              <xsl:variable name="ParameterOID" select="$AnalysisResult/@ParameterOID"/>
+              <tr>
+
+                <td class="label">Analysis Parameter(s)</td>
+
+                <td>
+
+                  <xsl:for-each select="$AnalysisResult/arm:AnalysisDatasets/arm:AnalysisDataset">
+  
+                    <xsl:variable name="WhereClauseOID" select="def:WhereClauseRef/@WhereClauseOID"/>
+                    <xsl:variable name="WhereClauseDef" select="$g_seqWhereClauseDefs[@OID=$WhereClauseOID]"/>
+                    <xsl:variable name="ItemGroupOID" select="@ItemGroupOID"/>
+                    
+                    <!--  Get the RangeCheck associated with the parameter (typically only one ...) --> 
+                    <xsl:for-each select="$WhereClauseDef/odm:RangeCheck[@def:ItemOID=$ParameterOID]">
+                      
+                      <xsl:variable name="whereRefItemOID" select="./@def:ItemOID"/>
+                      <xsl:variable name="whereRefItemName" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@Name"/>
+                      <xsl:variable name="whereRefItemDataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                      <xsl:variable name="whereOP" select="./@Comparator"/>
+                      <xsl:variable name="whereRefItemCodeListOID"
+                        select="$g_seqItemDefs[@OID=$whereRefItemOID]/odm:CodeListRef/@CodeListOID"/>
+                      <xsl:variable name="whereRefItemCodeList"
+                        select="$g_seqCodeLists[@OID=$whereRefItemCodeListOID]"/>
+                      
+                      <xsl:call-template name="linkItemGroupItem">
+                        <xsl:with-param name="ItemGroupOID" select="$ItemGroupOID"/>
+                        <xsl:with-param name="ItemOID" select="$whereRefItemOID"/>
+                        <xsl:with-param name="ItemName" select="$whereRefItemName"/>
+                      </xsl:call-template> 
+  
+                      <xsl:choose>
+                        <xsl:when test="$whereOP = 'IN' or $whereOP = 'NOTIN'">
+                          <xsl:text> </xsl:text>
+                          <xsl:variable name="Nvalues" select="count(./odm:CheckValue)"/>
+                          <xsl:choose>
+                            <xsl:when test="$whereOP='IN'">
+                              <xsl:text> IN </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                              <xsl:text> NOT IN </xsl:text>
+                            </xsl:otherwise>
+                          </xsl:choose>
+                          <xsl:text> (</xsl:text>
+                          <xsl:for-each select="./odm:CheckValue">
+                            <xsl:variable name="CheckValueINNOTIN" select="."/>
+                            <p class="linebreakcell"> 
+                              <xsl:call-template name="displayValue">
+                                <xsl:with-param name="Value" select="$CheckValueINNOTIN"/>
+                                <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                                <xsl:with-param name="decode" select="1"/>
+                                <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+                              </xsl:call-template>
+                              <xsl:if test="position() != $Nvalues">
+                                <xsl:value-of select="', '"/>
+                              </xsl:if>
+                            </p>
+                          </xsl:for-each><xsl:text> ) </xsl:text>
+                        </xsl:when>
+  
+                        <xsl:when test="$whereOP = 'EQ'">
+                          <xsl:variable name="CheckValueEQ" select="./odm:CheckValue"/>
+                          <xsl:text> = </xsl:text>
+                          <xsl:call-template name="displayValue">
+                            <xsl:with-param name="Value" select="$CheckValueEQ"/>
+                            <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                            <xsl:with-param name="decode" select="1"/>
+                            <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+                          </xsl:call-template>
+                        </xsl:when>
+  
+                        <xsl:when test="$whereOP = 'NE'">
+                          <xsl:variable name="CheckValueNE" select="./odm:CheckValue"/>
+                          <xsl:text> &#x2260; </xsl:text>
+                          <xsl:call-template name="displayValue">
+                            <xsl:with-param name="Value" select="$CheckValueNE"/>
+                            <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                            <xsl:with-param name="decode" select="1"/>
+                            <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+                          </xsl:call-template>
+                        </xsl:when>
+  
+                        <xsl:otherwise>
+                          <xsl:variable name="CheckValueOTH" select="./odm:CheckValue"/>
+                          <xsl:text> </xsl:text>
+                          <xsl:choose>
+                            <xsl:when test="$whereOP='LT'">
+                              <xsl:text> &lt; </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="$whereOP='LE'">
+                              <xsl:text> &lt;= </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="$whereOP='GT'">
+                              <xsl:text> &gt; </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="$whereOP='GE'">
+                              <xsl:text> &gt;= </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                              <xsl:value-of select="$whereOP"/>
+                            </xsl:otherwise>
+                          </xsl:choose>
+                          <xsl:call-template name="displayValue">
+                            <xsl:with-param name="Value" select="$CheckValueOTH"/>
+                            <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                            <xsl:with-param name="decode" select="1"/>
+                            <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+                          </xsl:call-template>                        
+                        </xsl:otherwise>
+                      </xsl:choose>
+                      
+                      <br/>
+                      <xsl:if test="position() != last()">
+                        <xsl:text> and </xsl:text>
+                      </xsl:if>
+                      
+                    </xsl:for-each>
+                    
+                    <!--  END - Get the RangeCheck associated with the parameter (typically only one ...) --> 
+                  
+                  </xsl:for-each>               
+                  
+                </td>
+              </tr>
+  
+              <!--
+                  The analysis Variables are next. It will link to ItemDef information.
+                -->
+              <tr>
+                <td class="label">Analysis Variable(s)</td>
+                <td>
+                  <xsl:for-each select="arm:AnalysisDatasets/arm:AnalysisDataset">
+                    <xsl:variable name="ItemGroupOID" select="@ItemGroupOID"/>
+                    <xsl:for-each select="arm:AnalysisVariable">
+                      <xsl:variable name="ItemOID" select="@ItemOID"/>
+                      <xsl:variable name="ItemDef" select="/odm:ODM/odm:Study/odm:MetaDataVersion/odm:ItemDef[@OID=$ItemOID]"/>
+                        <p class="analysisvariable">
+                        <a>
+                          <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$ItemOID"/></xsl:attribute>
+                          <xsl:value-of select="$ItemDef/@Name"/>
+                        </a> (<xsl:value-of select="$ItemDef/odm:Description/odm:TranslatedText"/>)
+                      </p>
+                    </xsl:for-each>
+                  </xsl:for-each>
+                </td>
+  
+              </tr>
+  
+              <!-- Use the AnalysisReason attribute of the AnalysisResults -->
+              <tr>
+                <td class="label">Analysis Reason</td>
+                <td><xsl:value-of select="$AnalysisResult/@AnalysisReason"/></td>
+              </tr>
+              <!-- Use the AnalysisPurpose attribute of the AnalysisResults -->
+              <tr>
+                <td class="label">Analysis Purpose</td>
+                <td><xsl:value-of select="$AnalysisResult/@AnalysisPurpose"/></td>
+              </tr>
+              
+              <!-- 
+                  AnalysisDataset Data References
+                -->
+              <tr>
+                <td class="label">Data References (incl. Selection Criteria)</td>
+                <td>
+                  <xsl:for-each select="$AnalysisResult/arm:AnalysisDatasets/arm:AnalysisDataset">
+                    <xsl:variable name="ItemGroupOID" select="@ItemGroupOID"/>
+                    <xsl:variable name="ItemGroupDef" select="/odm:ODM/odm:Study/odm:MetaDataVersion/odm:ItemGroupDef[@OID=$ItemGroupOID]"/>
+                    <div class="datareference">
+                      <a>
+                        <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupDef/@OID"/></xsl:attribute>
+                        <xsl:attribute name="title"><xsl:value-of select="$ItemGroupDef/odm:Description/odm:TranslatedText"/></xsl:attribute>
+                        <xsl:value-of select="$ItemGroupDef/@Name"/>
+                      </a>
+                      <xsl:text>  [</xsl:text>
+                      <xsl:call-template name="assembleWhereText">
+                        <xsl:with-param name="ValueItemRef"
+                           select="$AnalysisResult/arm:AnalysisDatasets/arm:AnalysisDataset[@ItemGroupOID=$ItemGroupOID]"/>
+                        <xsl:with-param name="ItemGroupLink" select="$ItemGroupOID"/>
+                        <xsl:with-param name="decode" select="0"/>
+                        <xsl:with-param name="break" select="0"/>
+                      </xsl:call-template>
+                      <xsl:text>]</xsl:text>
+                      <xsl:variable name="whereclausecmntOID" select="def:WhereClauseRef/@def:CommentOID"/>
+                      <xsl:if test="$whereclausecmntOID">
+                        <xsl:call-template name="displayItemDefComment">
+                          <xsl:with-param name="itemDef" select="$AnalysisResult/arm:AnalysisDatasets/arm:AnalysisDataset[@ItemGroupOID=$ItemGroupOID]/def:WhereClauseRef"/>
+                        </xsl:call-template>
+                      </xsl:if>
+                    </div>
+  
+                  </xsl:for-each>
+  
+                  <!--AnalysisDatasets Comments-->
+                  <xsl:for-each select="$AnalysisResult/arm:AnalysisDatasets">
+                    <xsl:if test="@def:CommentOID">
+                      <xsl:call-template name="displayItemGroupComment"/>
+                    </xsl:if>
+                  </xsl:for-each>                
+  
+               </td>
+              </tr>
+  
+              <!--
+                  if we have an arm:Documentation element
+                  produce a row with the contained information
+                -->
+  
+              <xsl:for-each select="$AnalysisResult/arm:Documentation">
+                <tr>
+                  <td class="label">Documentation</td>
+                  <td>
+                    <span>
+                      <xsl:value-of select="$AnalysisResult/arm:Documentation/odm:Description/odm:TranslatedText"/>
+                    </span>
+  
+                    <xsl:for-each select="def:DocumentRef">
+                      <xsl:variable name="leafID" select="@leafID"/>
+                      <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
+  
+                      <xsl:variable name="title" select="$leaf/def:title"/>
+                      <xsl:variable name="href" select="$leaf/@xlink:href"/>
+                      <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+                      <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+                      <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+                      <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                      
+                      <p class="linebreakcell">
+                       <xsl:call-template name="createHyperLink">
+                         <xsl:with-param name="href" select="$href"/>
+                         <xsl:with-param name="PageRefType" select="$PageRefType"/>
+                         <xsl:with-param name="PageRefs" select="$PageRefs"/>
+                         <xsl:with-param name="PageFirst" select="$PageFirst"/>
+                         <xsl:with-param name="PageLast" select="$PageLast"/>
+                         <xsl:with-param name="title" select="$title"/>
+                       </xsl:call-template>
+                      </p>
+                      
+                    </xsl:for-each>
+                  </td>
+                </tr>
+              </xsl:for-each>
+  
+              <!--
+                  if we have a arm:ProgrammingCode element
+                  produce a row with the contained information
+               -->
+              <xsl:for-each select="$AnalysisResult/arm:ProgrammingCode">
+                <tr>
+                  <td class="label">Programming Statements</td>
+                  <td>
+  
+                    <xsl:if test="@Context">
+                        <span class="code-context">[<xsl:value-of select="@Context"/>]</span>
+                    </xsl:if>  
+  
+                    <xsl:if test="arm:Code">
+                      <pre class="code"><xsl:value-of select="arm:Code"/></pre>
+                    </xsl:if>  
+  
+                    <div class="code-ref">
+                    <xsl:for-each select="def:DocumentRef">
+                      <xsl:variable name="leafID" select="@leafID"/>
+                      <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
+  
+                      <xsl:variable name="title" select="$leaf/def:title"/>
+                      <xsl:variable name="href" select="$leaf/@xlink:href"/>
+                      <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+                      <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+                      <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+                      <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                      
+                      <p class="linebreakcell">
+                        <xsl:call-template name="createHyperLink">
+                          <xsl:with-param name="href" select="$href"/>
+                          <xsl:with-param name="PageRefType" select="$PageRefType"/>
+                          <xsl:with-param name="PageRefs" select="$PageRefs"/>
+                          <xsl:with-param name="PageFirst" select="$PageFirst"/>
+                          <xsl:with-param name="PageLast" select="$PageLast"/>
+                          <xsl:with-param name="title" select="$title"/>
+                        </xsl:call-template>
+                      </p>
+                      
+                    </xsl:for-each>
+                    </div>
+                  </td>
+                </tr>
+              </xsl:for-each>
+  
+            </xsl:for-each>
+          </xsl:element>
+        </div>
+        
+        <xsl:call-template name="linkTop"/>
+        <xsl:call-template name="lineBreak"/>
+        
+      </xsl:for-each>
+  </xsl:template>
+
 
   <!-- **************************************************** -->
   <!-- Template: ItemGroupDefs                              -->
@@ -512,9 +1016,9 @@
         <xsl:call-template name="displayKeys"/>
       </td>
 
-      <!-- ************************************************ -->
-      <!-- Link each XPT to its corresponding archive file  -->
-      <!-- ************************************************ -->
+      <!-- **************************************************** -->
+      <!-- Link each Dataset to its corresponding archive file  -->
+      <!-- **************************************************** -->
       <td>
         <a>
           <xsl:attribute name="href">
@@ -537,26 +1041,38 @@
   </xsl:template>
 
   <!-- **************************************************** -->
-  <!-- Template: ItemRefADaM                                -->
+  <!-- Template: ItemRefADaM (@Purpose='Analysis')          -->
   <!-- **************************************************** -->
   <xsl:template name="ItemRefADaM">
 
     <a id="IG.{@OID}"/>
     <div class="containerbox" style="page-break-after: always;">
 
+      <h1 class="invisible">
+        <xsl:choose>
+          <xsl:when test="@SASDatasetName">
+            <xsl:value-of select="concat(./odm:Description/odm:TranslatedText, ' (', @SASDatasetName, ') ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="concat(./odm:Description/odm:TranslatedText, ' (', @Name, ') ')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </h1>
+      
       <xsl:element name="table">
         <xsl:attribute name="summary">ItemGroup IG.<xsl:value-of select="@OID"/>
         </xsl:attribute>
 
         <caption>
-          <xsl:call-template name="linkXPT"/>
+          <xsl:call-template name="linkDataset"/>
         </caption>
 
         <!-- Output the column headers -->
         <tr class="header">
           <th scope="col">Variable</th>
           <th scope="col">Label</th>
-          <th scope="col">Type</th>
+        	<th scope="col">Key</th>
+        	<th scope="col">Type</th>
           <th scope="col" class="length" abbr="Length">Length / Display Format</th>
           <th scope="col" abbr="Format">Controlled Terms or Format</th>
           <th scope="col" abbr="Derivation">Source/Derivation/Comment</th>
@@ -596,8 +1112,7 @@
                   </a>
                 </xsl:when>
                 <xsl:otherwise>
-                  <!-- Anchor links to Variable Name -->
-                  <!-- Make unique anchor -->
+                  <!-- Make unique anchor link to Variable Name -->
                   <a>
                     <xsl:attribute name="name">
                       <xsl:value-of select="../@OID"/>.<xsl:value-of select="$itemDef/@OID"/>
@@ -608,14 +1123,10 @@
               </xsl:choose>
             </td>
 
-            <td>
-              <xsl:value-of select="$itemDef/odm:Description/odm:TranslatedText"/>
-            </td>
-
-            <td class="datatype">
-              <xsl:value-of select="$itemDef/@DataType"/>
-            </td>
-
+            <td><xsl:value-of select="$itemDef/odm:Description/odm:TranslatedText"/></td>
+          	<td class="number"><xsl:value-of select="@KeySequence"/></td>
+            <td class="datatype"><xsl:value-of select="$itemDef/@DataType"/></td>
+            
             <td class="number">
               <xsl:choose>
                 <xsl:when test="$itemDef/@def:DisplayFormat">
@@ -649,7 +1160,7 @@
               <xsl:if test="$Origin">
                 <xsl:choose>
                   <xsl:when test="$Origin[@Type='Predecessor']"> Predecessor: <xsl:value-of
-                      select="$itemDef/def:Origin/odm:Description/odm:TranslatedText"/>
+                    select="$itemDef/def:Origin/odm:Description/odm:TranslatedText"/>
                   </xsl:when>
                   <xsl:otherwise>
                     <xsl:value-of select="$Origin/@Type"/>
@@ -667,7 +1178,7 @@
 
               <xsl:variable name="cmntOID" select="$itemDef/@def:CommentOID"/>
               <xsl:if test="$cmntOID">
-                <xsl:call-template name="displayItemComment">
+                <xsl:call-template name="displayItemDefComment">
                   <xsl:with-param name="itemDef" select="$itemDef"/>
                 </xsl:call-template>
               </xsl:if>
@@ -680,20 +1191,31 @@
     </div>
   </xsl:template>
 
-  <!-- **************************************************** -->
-  <!-- Template: ItemRefSDTM                                -->
-  <!-- **************************************************** -->
-  <xsl:template name="ItemRefSDTM">
+  <!-- ************************************************************ -->
+  <!-- Template: ItemRefSDS (SDTM or SEND, (@Purpose!='Analysis'))  -->
+  <!-- ************************************************************ -->
+  <xsl:template name="ItemRefSDS">
 
     <a id="IG.{@OID}"/>
     <div class="containerbox" style="page-break-after: always;">
+
+      <h1 class="invisible">
+        <xsl:choose>
+          <xsl:when test="@SASDatasetName">
+            <xsl:value-of select="concat(./odm:Description/odm:TranslatedText, ' (', @SASDatasetName, ') ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="concat(./odm:Description/odm:TranslatedText, ' (', @Name, ') ')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </h1>
 
       <xsl:element name="table">
         <xsl:attribute name="summary">ItemGroup IG.<xsl:value-of select="@OID"/>
         </xsl:attribute>
 
         <caption>
-          <xsl:call-template name="linkXPT"/>
+          <xsl:call-template name="linkDataset"/>
         </caption>
 
         <!-- Output the column headers -->
@@ -737,8 +1259,7 @@
                   </a>
                 </xsl:when>
                 <xsl:otherwise>
-                  <!-- Anchor links to Variable Name -->
-                  <!-- Make unique anchor -->
+                  <!-- Make unique anchor link to Variable Name -->
                   <a>
                     <xsl:attribute name="name">
                       <xsl:value-of select="../@OID"/>.<xsl:value-of select="$itemDef/@OID"/>
@@ -783,7 +1304,7 @@
 
               <xsl:variable name="cmntOID" select="$itemDef/@def:CommentOID"/>
               <xsl:if test="$cmntOID">
-                <xsl:call-template name="displayItemComment">
+                <xsl:call-template name="displayItemDefComment">
                   <xsl:with-param name="itemDef" select="$itemDef"/>
                 </xsl:call-template>
               </xsl:if>
@@ -854,14 +1375,16 @@
     </div>
   </xsl:template>
 
-	<!-- ***************************************************************** -->
-	<!-- Template: AppendixValueList (treats the def:ValueListDef elements -->
-	<!-- ***************************************************************** -->
+	<!-- ****************************************************************** -->
+	<!-- Template: AppendixValueList (handles the def:ValueListDef elements -->
+	<!-- ****************************************************************** -->
 	<xsl:template name="AppendixValueList">
 		
 	  <xsl:if test="$g_seqValueListDefs">
 			
-			<a name="valuemeta"/>
+	    <xsl:call-template name="lineBreak"/>
+
+	    <a name="valuemeta"/>
 			<div class="containerbox" style="page-break-after: always;">
 				<xsl:element name="h1">
 					<xsl:choose>
@@ -878,7 +1401,7 @@
 				</xsl:element>
 				
 			  <xsl:for-each select="$g_seqValueListDefs">
-					
+
 					<xsl:element name="div">
 						<!-- page break after -->
 						<xsl:attribute name="class">containerbox</xsl:attribute>
@@ -923,9 +1446,22 @@
 								<th scope="col">Type</th>
 								<th scope="col" abbr="Length" class="length">Length / Display Format</th>
 								<th scope="col" abbr="Format">Controlled Terms or Format</th>
-								<th scope="col">Origin</th>
-								<th scope="col">Derivation/Comment</th>
+							  <xsl:if test="$g_ItemGroupDefPurpose != 'Analysis'">
+							    <th scope="col">Origin</th>
+							  </xsl:if>
+							  <xsl:choose>
+							    <xsl:when test="$g_ItemGroupDefPurpose='Analysis'">
+							      <th scope="col">Source/Derivation/Comment</th>
+							    </xsl:when>
+							    <xsl:when test="$g_ItemGroupDefPurpose='Tabulation'">
+							      <th scope="col">Derivation/Comment</th>
+							    </xsl:when>
+							    <xsl:otherwise>
+							      <th scope="col">Derivation/Comment</th>
+							    </xsl:otherwise>
+							  </xsl:choose>
 							</tr>
+						  
 							<!-- Get the individual data points -->
 							<xsl:for-each select="./odm:ItemRef">
 								<xsl:variable name="ItemRef" select="."/>
@@ -962,19 +1498,22 @@
 									<td>
 										<xsl:call-template name="assembleWhereText">
 											<xsl:with-param name="ValueItemRef" select="$ItemRef"/>
-											<xsl:with-param name="ItemGroupOID" select="$ValueItemGroupOID"/>
+											<xsl:with-param name="ItemGroupLink" select="$ValueItemGroupOID"/>
+										  <xsl:with-param name="decode" select="1"/>
+										  <xsl:with-param name="break" select="1"/>
 										</xsl:call-template>
 										
-										<!--xsl:if test="$ParentVName='QVAL'"> (<xsl:value-of
-											select="$valueDef/odm:Description/odm:TranslatedText"/>) </xsl:if-->										
+										<xsl:if test="$ParentVName='QVAL'"> (<xsl:value-of
+											select="$valueDef/odm:Description/odm:TranslatedText"/>) </xsl:if>										
 									</td>
 									
-									<!-- datatype -->
+									<!-- Third column: datatype -->
 									<td class="datatype">
 										<xsl:value-of select="$valueDef/@DataType"/>
 									</td>
 									
-									<td class="number">
+								  <!-- Fourth column: Length/DisplayFormat -->
+								  <td class="number">
 										<xsl:choose>
 											<xsl:when test="$valueDef/@def:DisplayFormat">
 												<xsl:value-of select="$valueDef/@def:DisplayFormat"/>
@@ -985,12 +1524,7 @@
 										</xsl:choose>
 									</td>
 									
-									<!-- Fourth column: Controlled Terms or Format -->
-									
-									<!-- *************************************************** -->
-									<!-- Hypertext Link to the Decode Appendix               -->
-									<!-- *************************************************** -->
-									
+									<!-- Fifth column: Controlled Terms or Format -->
 									<td>
 										<xsl:call-template name="linkDecodeList">
 											<xsl:with-param name="itemDef" select="$valueDef"/>
@@ -1002,38 +1536,56 @@
 									</td>
 																		
 									<!-- *************************************************** -->
-									<!-- Origin Column for ValueDefs                          -->
+									<!-- Origin Column for ValueDefs (when not ADaM)         -->
 									<!-- *************************************************** -->
-									<td>
-										<xsl:call-template name="displayItemDefOrigin">
-											<xsl:with-param name="itemDef" select="$valueDef"/>
-										</xsl:call-template>
-									</td>
+								  <xsl:if test="$g_ItemGroupDefPurpose != 'Analysis'">
+								    <td>
+								      <xsl:call-template name="displayItemDefOrigin">
+								        <xsl:with-param name="itemDef" select="$valueDef"/>
+								      </xsl:call-template>
+								    </td>
+								  </xsl:if>
 																		
 									<!-- *************************************************** -->
-									<!-- Computation Methods Column                          -->
+								  <!-- Source/Derivation/Comment                           -->
 									<!-- *************************************************** -->
 									<td>
 									  <xsl:variable name="whereclausecmntOID" select="$whereDef/@def:CommentOID"/>
 									  <xsl:if test="$whereclausecmntOID">
-									    <xsl:call-template name="displayItemComment">
+									    <xsl:call-template name="displayItemDefComment">
 									      <xsl:with-param name="itemDef" select="$whereDef"/>
 									    </xsl:call-template>
 									  </xsl:if>
 									  
-									  <xsl:variable name="cmntOID" select="$valueDef/@def:CommentOID"/>
-									  <xsl:if test="$cmntOID">
-									    <xsl:call-template name="displayItemComment">
-									      <xsl:with-param name="itemDef" select="$valueDef"/>
-									    </xsl:call-template>
+									  <xsl:if test="$g_ItemGroupDefPurpose = 'Analysis'">								    
+    								  <xsl:variable name="Origin" select="$valueDef/def:Origin"/>
+  									  <xsl:if test="$Origin">
+  									    <xsl:choose>
+  									      <xsl:when test="$Origin[@Type='Predecessor']"> Predecessor: <xsl:value-of
+  									        select="$valueDef/def:Origin/odm:Description/odm:TranslatedText"/>
+  									      </xsl:when>
+  									      <xsl:otherwise>
+  									        <xsl:value-of select="$Origin/@Type"/>
+  									        <xsl:text>: </xsl:text>
+  									      </xsl:otherwise>
+  									    </xsl:choose>
+  									  </xsl:if>
 									  </xsl:if>
-									  
+
 									  <xsl:variable name="methodOID" select="$ItemRef/@MethodOID"/>
 									  <xsl:if test="$methodOID">
 									    <xsl:call-template name="displayItemDefMethod">
 											<xsl:with-param name="itemRef" select="$ItemRef"/>
 										</xsl:call-template>
 									  </xsl:if>
+
+								  <xsl:variable name="cmntOID" select="$valueDef/@def:CommentOID"/>
+								  <xsl:if test="$cmntOID">
+								    <xsl:call-template name="displayItemDefComment">
+								      <xsl:with-param name="itemDef" select="$valueDef"/>
+								    </xsl:call-template>
+								  </xsl:if>
+								  
 									</td>
 								</tr>
 								<!-- end of loop over all def:ValueListDef elements -->
@@ -1048,12 +1600,12 @@
 						</xsl:element>
 					</xsl:element>
 					
-					<xsl:call-template name="lineBreak"/>
 				</xsl:for-each>
 			</div>
 			
-			<xsl:call-template name="linktop"/>
-			
+			<xsl:call-template name="linkTop"/>
+	    <xsl:call-template name="lineBreak"/>
+	    
 		</xsl:if>
 	</xsl:template>
 	
@@ -1082,7 +1634,7 @@
                     
        </xsl:for-each>
 
-        <xsl:call-template name="linktop"/>
+        <xsl:call-template name="linkTop"/>
 
       </div>
     </xsl:if>
@@ -1101,7 +1653,7 @@
 
         <xsl:element name="table">
           <xsl:attribute name="summary">External Dictionaries (MedDra, WHODRUG, ...)</xsl:attribute>
-          <caption>External Dictionaries</caption>
+          <caption class="header">External Dictionaries</caption>
 
           <tr class="header">
             <th scope="col">Reference Name</th>
@@ -1121,13 +1673,26 @@
               </xsl:call-template>
 
               <td><xsl:value-of select="../@Name"/> (<xsl:value-of select="../@OID"/>)</td>
-              <td><xsl:value-of select="@Dictionary"/></td>
+              <td>
+                <xsl:choose>
+                  <xsl:when test="@href">
+                    <a>
+                      <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
+                      <xsl:value-of select="@Dictionary"/>
+                    </a>  
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="@Dictionary"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </td>
               <td><xsl:value-of select="@Version"/></td>
+
             </xsl:element>
           </xsl:for-each>
         </xsl:element>
       </div>
-      <xsl:call-template name="linktop"/>
+      <xsl:call-template name="linkTop"/>
 
     </xsl:if>
   </xsl:template>
@@ -1159,6 +1724,7 @@
 
           <!-- set the legend (title) -->
           <xsl:element name="caption">
+            <xsl:attribute name="class">header</xsl:attribute>
             <xsl:choose>
               <xsl:when test="$g_ItemGroupDefPurpose='Tabulation'">
                 <xsl:text>Computational Algorithms</xsl:text>
@@ -1195,23 +1761,36 @@
               <td>
                 <xsl:value-of select="normalize-space(.)"/>
 
-                <xsl:if test="./def:DocumentRef">
-                  <xsl:variable name="leafID" select="./def:DocumentRef/@leafID"/>
-
+                <xsl:for-each select="./def:DocumentRef">
+                  <xsl:variable name="leafID" select="@leafID"/>
                   <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
-                  <div class="linebreakcell">
-                    <xsl:value-of select="normalize-space($leaf/def:title)"/> (<a class="external">
-                      <xsl:attribute name="href"><xsl:value-of select="$leaf/@xlink:href"/></xsl:attribute>
-                      <xsl:value-of select="$leaf/@xlink:href"/>
-                    </a>)</div>
-                </xsl:if>
-
+                    
+                  <xsl:variable name="title" select="$leaf/def:title"/>
+                  <xsl:variable name="href" select="$leaf/@xlink:href"/>
+                  <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+                  <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+                  <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+                  <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                  
+                  <p class="linebreakcell">
+                    <xsl:call-template name="createHyperLink">
+                      <xsl:with-param name="href" select="$href"/>
+                      <xsl:with-param name="PageRefType" select="$PageRefType"/>
+                      <xsl:with-param name="PageRefs" select="$PageRefs"/>
+                      <xsl:with-param name="PageFirst" select="$PageFirst"/>
+                      <xsl:with-param name="PageLast" select="$PageLast"/>
+                      <xsl:with-param name="title" select="$title"/>
+                    </xsl:call-template>
+                  </p>
+                  
+                </xsl:for-each>
+                
               </td>
             </xsl:element>
           </xsl:for-each>
         </xsl:element>
       </div>
-      <xsl:call-template name="linktop"/>
+      <xsl:call-template name="linkTop"/>
 
     </xsl:if>
   </xsl:template>
@@ -1229,7 +1808,7 @@
 
         <xsl:element name="table">
           <xsl:attribute name="summary">ItemGroup, ItemDef and WhereClauseDef Comments</xsl:attribute>
-          <caption>Comments</caption>
+          <caption class="header">Comments</caption>
           <!-- set the legend (title) -->
 
           <tr class="header">
@@ -1237,7 +1816,6 @@
             <th scope="col">Description</th>
           </tr>
           <xsl:for-each select="$g_seqCommentDefs">
-            <xsl:sort data-type="text" select="." order="ascending"/>
             <xsl:element name="tr">
 
               <!-- Create an anchor -->
@@ -1253,29 +1831,41 @@
               <td>
                 <xsl:value-of select="normalize-space(.)"/>
 
-                <xsl:if test="./def:DocumentRef">
-                  <xsl:variable name="leafID" select="./def:DocumentRef/@leafID"/>
-
+                <xsl:for-each select="./def:DocumentRef">
+                  <xsl:variable name="leafID" select="@leafID"/>
                   <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
-                  <div class="linebreakcell">
-                    <xsl:value-of select="normalize-space($leaf/def:title)"/> (<a class="external">
-                      <xsl:attribute name="href"><xsl:value-of select="$leaf/@xlink:href"/></xsl:attribute>
-                      <xsl:value-of select="$leaf/@xlink:href"/>
-                    </a>)</div>
-                </xsl:if>
-
+                    
+                  <xsl:variable name="title" select="$leaf/def:title"/>
+                  <xsl:variable name="href" select="$leaf/@xlink:href"/>
+                  <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+                  <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+                  <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+                  <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                  
+                  <p class="linebreakcell">
+                    <xsl:call-template name="createHyperLink">
+                      <xsl:with-param name="href" select="$href"/>
+                      <xsl:with-param name="PageRefType" select="$PageRefType"/>
+                      <xsl:with-param name="PageRefs" select="$PageRefs"/>
+                      <xsl:with-param name="PageFirst" select="$PageFirst"/>
+                      <xsl:with-param name="PageLast" select="$PageLast"/>
+                      <xsl:with-param name="title" select="$title"/>
+                    </xsl:call-template>
+                  </p>
+                  
+                </xsl:for-each>
               </td>
             </xsl:element>
           </xsl:for-each>
         </xsl:element>
       </div>
-      <xsl:call-template name="linktop"/>
+      <xsl:call-template name="linkTop"/>
 
     </xsl:if>
   </xsl:template>
 
   <!-- *************************************************** -->
-  <!--                                                     -->
+                                                       
   <!-- Templates for special features like hyperlinks      -->
   <!--                                                     -->
   <!-- *************************************************** -->
@@ -1347,8 +1937,8 @@
   <xsl:template name="crfSinglePageHyperlink">
     <xsl:param name="pagenumber"/>
     <!-- create the hyperlink itself -->
-    <xsl:if test="$g_xndMetaDataVersion/def:AnnotatedCRF">
-      <xsl:for-each select="$g_xndMetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
+    <xsl:if test="$g_MetaDataVersion/def:AnnotatedCRF">
+      <xsl:for-each select="$g_MetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
         <xsl:variable name="leafIDs" select="@leafID"/>
         <xsl:variable name="leaf" select="../../def:leaf[@ID=$leafIDs]"/>
         <a>
@@ -1363,13 +1953,13 @@
   </xsl:template>
   
   <!-- ******************************************************** -->
-  <!-- Hypertext Link to a CRF Named Destination                -->
+  <!-- Hypertext Link to a CRF Page Named Destination           -->
   <!-- ******************************************************** -->
   <xsl:template name="crfNamedDestinationHyperlink">
     <xsl:param name="destination"/>
     <!-- create the hyperlink itself -->
-    <xsl:if test="$g_xndMetaDataVersion/def:AnnotatedCRF">
-      <xsl:for-each select="$g_xndMetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
+    <xsl:if test="$g_MetaDataVersion/def:AnnotatedCRF">
+      <xsl:for-each select="$g_MetaDataVersion/def:AnnotatedCRF/def:DocumentRef">
         <xsl:variable name="leafIDs" select="@leafID"/>
         <xsl:variable name="leaf" select="../../def:leaf[@ID=$leafIDs]"/>
         <a>
@@ -1383,9 +1973,94 @@
     </xsl:if>
   </xsl:template>
   
+  <!-- ******************************************************** -->
+  <!-- Hypertext Link to a single Page                          -->
+  <!-- ******************************************************** -->
+  <xsl:template name="linkSinglePageHyperlink">
+    <xsl:param name="href"/>
+    <xsl:param name="pagenumber"/>
+    <xsl:param name="title"/>
+    <!-- create the hyperlink itself -->
+    <a class="external">
+      <xsl:attribute name="href">
+        <xsl:value-of select="concat($href,'#page=',$pagenumber)"/>
+      </xsl:attribute>
+      <xsl:value-of select="$title"/>
+    </a>
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <!-- ******************************************************** -->
+  <!-- Hypertext Link to a Named Destination                    -->
+  <!-- ******************************************************** -->
+  <xsl:template name="linkNamedDestinationHyperlink">
+    <xsl:param name="href"/>
+    <xsl:param name="destination"/>
+    <xsl:param name="title"/>
+    <!-- create the hyperlink itself -->
+    <a class="external">
+      <xsl:attribute name="href">
+        <xsl:value-of select="concat($href,'#',$destination)"/>
+      </xsl:attribute>
+      <xsl:value-of select="$title"/>         
+    </a>
+    <xsl:text> </xsl:text>
+  </xsl:template>
+  
+ 
+  <!-- ******************************************************** -->
+  <!-- Hypertext Link to a Document                             -->
+  <!-- ******************************************************** -->
+  <xsl:template name="linkDocumentHyperlink">
+    <xsl:param name="href"/>
+    <xsl:param name="title"/>
+    <!-- create the hyperlink itself -->
+    <a class="external">
+      <xsl:attribute name="href">
+        <xsl:value-of select="$href"/>
+      </xsl:attribute>
+      <xsl:value-of select="$title"/>          
+    </a>
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <!-- ******************************************************** -->
+  <!-- Hypertext Link to a Document                             -->
+  <!-- ******************************************************** -->
+  <xsl:template name="createHyperLink">
+    <xsl:param name="href"/>
+    <xsl:param name="PageRefType"/>
+    <xsl:param name="PageRefs"/>
+    <xsl:param name="PageFirst"/>
+    <xsl:param name="PageLast"/>
+    <xsl:param name="title"/>
+    <xsl:choose>
+      <xsl:when test="$PageRefType = $REFTYPE_PHYSICALPAGE">
+        <xsl:call-template name="linkSinglePageHyperlink">
+          <xsl:with-param name="href" select="$href"/>
+          <xsl:with-param name="pagenumber" select="$PageRefs"/>
+          <xsl:with-param name="title" select="$title"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$PageRefType = $REFTYPE_NAMEDDESTINATION">
+        <xsl:call-template name="linkNamedDestinationHyperlink">
+          <xsl:with-param name="href" select="$href"/>
+          <xsl:with-param name="destination" select="$PageRefs"/>
+          <xsl:with-param name="title" select="$title"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="linkDocumentHyperlink">
+          <xsl:with-param name="href" select="$href"/>
+          <xsl:with-param name="title" select="$title"/>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  
   <!-- ************************************************************* -->
-  <!-- Template:    displayItemGroupComment                          -->
-  <!-- Description:                                                  -->
+  <!-- ItemGroup Comment                                             -->
   <!-- ************************************************************* -->
   <xsl:template name="displayItemGroupComment">
     <xsl:if test="@def:CommentOID">
@@ -1398,37 +2073,50 @@
       <xsl:for-each select="$Comment/def:DocumentRef">
         <xsl:variable name="leafID" select="@leafID"/>
         <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
+
+        <xsl:variable name="title" select="$leaf/def:title"/>
+        <xsl:variable name="href" select="$leaf/@xlink:href"/>
+        <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+        <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+        <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+        <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+        
         <p class="linebreakcell">
-          <a class="external">
-            <xsl:attribute name="href">
-              <xsl:value-of select="$leaf/@xlink:href"/>
-            </xsl:attribute>
-            <xsl:value-of select="$leaf/def:title"/>
-          </a>
+          <xsl:call-template name="createHyperLink">
+            <xsl:with-param name="href" select="$href"/>
+            <xsl:with-param name="PageRefType" select="$PageRefType"/>
+            <xsl:with-param name="PageRefs" select="$PageRefs"/>
+            <xsl:with-param name="PageFirst" select="$PageFirst"/>
+            <xsl:with-param name="PageLast" select="$PageLast"/>
+            <xsl:with-param name="title" select="$title"/>
+          </xsl:call-template>
         </p>
+        
       </xsl:for-each>
     </xsl:if>
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template:    displayItemDefOrigin                             -->
-  <!-- Description:                                                  -->
+  <!-- ItemDef Origin                                                -->
   <!-- ************************************************************* -->
   <xsl:template name="displayItemDefOrigin">
     <xsl:param name="itemDef"/>
+  	
+  	<xsl:for-each select="$itemDef/def:Origin"> 	
+  	
     <!-- translate the value of the def:Origin/@Type attribute to uppercase
               in order to see whether it contains the word "CRF" case-insensitive -->
-    <xsl:variable name="ORIGIN_UPPERCASE" select="translate($itemDef/def:Origin/@Type,$g_lowercase,$g_uppercase)"/>
+    <xsl:variable name="ORIGIN_UPPERCASE" select="translate(@Type,$LOWERCASE,$UPPERCASE)"/>
     <xsl:choose>
       <!-- create a set of hyperlinks to CRF pages -->
       <xsl:when test="$ORIGIN_UPPERCASE = 'CRF'">
 
-        <xsl:variable name="PageRefType" select="normalize-space($itemDef/def:Origin/def:DocumentRef/def:PDFPageRef/@Type)"/>
-        <xsl:variable name="PageRefs" select="normalize-space($itemDef/def:Origin/def:DocumentRef/def:PDFPageRef/@PageRefs)"/>
-        <xsl:variable name="PageFirst" select="normalize-space($itemDef/def:Origin/def:DocumentRef/def:PDFPageRef/@FirstPage)"/>
-        <xsl:variable name="PageLast" select="normalize-space($itemDef/def:Origin/def:DocumentRef/def:PDFPageRef/@LastPage)"/>
+        <xsl:variable name="PageRefType" select="normalize-space(def:DocumentRef/def:PDFPageRef/@Type)"/>
+        <xsl:variable name="PageRefs" select="normalize-space(def:DocumentRef/def:PDFPageRef/@PageRefs)"/>
+        <xsl:variable name="PageFirst" select="normalize-space(def:DocumentRef/def:PDFPageRef/@FirstPage)"/>
+        <xsl:variable name="PageLast" select="normalize-space(def:DocumentRef/def:PDFPageRef/@LastPage)"/>
         
-        <xsl:value-of select="$itemDef/def:Origin/@Type"/>
+        <xsl:value-of select="@Type"/>
         <xsl:choose>
           <xsl:when test="$PageRefType = $REFTYPE_NAMEDDESTINATION">
             <xsl:text> Page </xsl:text>
@@ -1484,9 +2172,15 @@
       </xsl:when>
       <!-- all other cases, just print the content from the 'Origin' attribute -->
       <xsl:otherwise>
-        <xsl:value-of select="$itemDef/def:Origin/@Type"/>
+        <xsl:value-of select="@Type"/>
       </xsl:otherwise>
     </xsl:choose>
+ 
+  		<xsl:if test="position() != last()">
+  			<xsl:text>, </xsl:text>
+  		</xsl:if>
+  		
+  	</xsl:for-each>  		
   </xsl:template>
   
 	<!-- ***************************************** -->
@@ -1547,7 +2241,6 @@
 				<p class="footnote"><span class="super">*</span> Extended Value</p>
 			</xsl:if>
 		</div>
-		<xsl:call-template name="lineBreak"/>
 	</xsl:template>
 	
 	<!-- ***************************************** -->
@@ -1604,14 +2297,12 @@
 				<p class="footnote"><span class="super">*</span> Extended Value</p>
 			</xsl:if>
 		</div>
-		<xsl:call-template name="lineBreak"/>
 	</xsl:template>
 	
 	<!-- ************************************************************* -->
-  <!-- Template:    displayItemDefComment                            -->
-  <!-- Description:                                                  -->
+  <!-- ItemDef Comment                                               -->
   <!-- ************************************************************* -->
-  <xsl:template name="displayItemComment">
+  <xsl:template name="displayItemDefComment">
 
     <xsl:param name="itemDef"/>
 
@@ -1622,24 +2313,35 @@
         <xsl:value-of select="normalize-space($g_seqCommentDefs[@OID=$cmntOID]/odm:Description/odm:TranslatedText)"/>
       </xsl:variable>
       <p class="linebreakcell"><xsl:value-of select="$ItemDefComment"/></p>
+
       <xsl:for-each select="$Comment/def:DocumentRef">
         <xsl:variable name="leafID" select="@leafID"/>
         <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
+
+        <xsl:variable name="title" select="$leaf/def:title"/>
+        <xsl:variable name="href" select="$leaf/@xlink:href"/>
+        <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+        <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+        <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+        <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+        
         <p class="linebreakcell">
-          <a class="external">
-            <xsl:attribute name="href">
-              <xsl:value-of select="$leaf/@xlink:href"/>
-            </xsl:attribute>
-            <xsl:value-of select="normalize-space($leaf/def:title)"/>
-          </a>
+          <xsl:call-template name="createHyperLink">
+            <xsl:with-param name="href" select="$href"/>
+            <xsl:with-param name="PageRefType" select="$PageRefType"/>
+            <xsl:with-param name="PageRefs" select="$PageRefs"/>
+            <xsl:with-param name="PageFirst" select="$PageFirst"/>
+            <xsl:with-param name="PageLast" select="$PageLast"/>
+            <xsl:with-param name="title" select="$title"/>
+          </xsl:call-template>
         </p>
+        
       </xsl:for-each>
     </xsl:if>
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template:    displayItemDefMethod                             -->
-  <!-- Description:                                                  -->
+  <!-- ItemDef Method                                                -->
   <!-- ************************************************************* -->
   <xsl:template name="displayItemDefMethod">
     <xsl:param name="itemRef"/>
@@ -1654,21 +2356,35 @@
       <div class="linebreakcell">
         <xsl:value-of select="$MethodComment"/>
       </div>
+
       <xsl:for-each select="$Method/def:DocumentRef">
         <xsl:variable name="leafID" select="$Method/def:DocumentRef/@leafID"/>
         <xsl:variable name="leaf" select="$g_seqleafs[@ID=$leafID]"/>
-        <div class="linebreakcell">
-          <xsl:value-of select="$leaf/def:title"/> (<a class="external">
-            <xsl:attribute name="href"><xsl:value-of select="$leaf/@xlink:href"/></xsl:attribute>
-            <xsl:value-of select="$leaf/@xlink:href"/>
-          </a>) </div>
+ 
+        <xsl:variable name="title" select="$leaf/def:title"/>
+        <xsl:variable name="href" select="$leaf/@xlink:href"/>
+        <xsl:variable name="PageRefType" select="normalize-space(def:PDFPageRef/@Type)"/>
+        <xsl:variable name="PageRefs" select="normalize-space(def:PDFPageRef/@PageRefs)"/>
+        <xsl:variable name="PageFirst" select="normalize-space(def:PDFPageRef/@FirstPage)"/>
+        <xsl:variable name="PageLast" select="normalize-space(def:PDFPageRef/@LastPage)"/>
+                
+        <p class="linebreakcell">
+          <xsl:call-template name="createHyperLink">
+            <xsl:with-param name="href" select="$href"/>
+            <xsl:with-param name="PageRefType" select="$PageRefType"/>
+            <xsl:with-param name="PageRefs" select="$PageRefs"/>
+            <xsl:with-param name="PageFirst" select="$PageFirst"/>
+            <xsl:with-param name="PageLast" select="$PageLast"/>
+            <xsl:with-param name="title" select="$title"/>
+          </xsl:call-template>
+        </p>
+        
       </xsl:for-each>
     </xsl:if>
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template:    displayKeys                                      -->
-  <!-- Description:                                                  -->
+  <!-- Display Keys                                                  -->
   <!-- ************************************************************* -->
   <xsl:template name="displayKeys">
     <xsl:variable name="KeySequence" select="odm:ItemRef/@KeySequence"/>
@@ -1685,10 +2401,9 @@
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template:    linkXPT                                          -->
-  <!-- Description:                                                  -->
+  <!-- Link to Dataset                                               -->
   <!-- ************************************************************* -->
-  <xsl:template name="linkXPT">
+  <xsl:template name="linkDataset">
     <xsl:choose>
       <xsl:when test="@SASDatasetName">
         <xsl:value-of select="concat(./odm:Description/odm:TranslatedText, ' (', @SASDatasetName, ') ')"/>
@@ -1698,7 +2413,7 @@
       </xsl:otherwise>
     </xsl:choose>
 
-    <span class="xpt"><xsl:text>[Location: </xsl:text>
+    <span class="dataset"><xsl:text>[Location: </xsl:text>
     <a>
       <xsl:attribute name="href">
         <xsl:value-of select="def:leaf/@xlink:href"/>
@@ -1709,23 +2424,21 @@
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template:    assembleWhereText                                -->
-  <!-- Description:                                                  -->
+  <!-- Where Text                                                    -->
   <!-- ************************************************************* -->
   <xsl:template name="assembleWhereText">
     <xsl:param name="ValueItemRef"/>
-    <xsl:param name="ItemGroupOID"/>
-
+    <xsl:param name="ItemGroupLink"/>
+    <xsl:param name="decode"/>
+    <xsl:param name="break"/>
+    
     <xsl:variable name="ValueRef" select="$ValueItemRef"/>
-    <xsl:variable name="LastWhereRef" select="$ValueRef/def:WhereClauseRef[last()]"/>
     <xsl:for-each select="$ValueRef/def:WhereClauseRef">
-      <xsl:variable name="thisWhereRef" select="."/>
+      
       <xsl:variable name="whereOID" select="./@WhereClauseOID"/>
       <xsl:variable name="whereDef" select="$g_seqWhereClauseDefs[@OID=$whereOID]"/>
-      <xsl:variable name="LastRangeCheck" select="$whereDef/odm:RangeCheck[last()]"/>
-
       <xsl:for-each select="$whereDef/odm:RangeCheck">
-        <xsl:variable name="thisRangeCheck" select="."/>
+        
         <xsl:variable name="whereRefItemOID" select="./@def:ItemOID"/>
         <xsl:variable name="whereRefItemName" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@Name"/>
         <xsl:variable name="whereOP" select="./@Comparator"/>
@@ -1734,101 +2447,186 @@
         <xsl:variable name="whereRefItemCodeList"
           select="$g_seqCodeLists[@OID=$whereRefItemCodeListOID]"/>
         
-        <xsl:variable name="linkItemGroupItem">
-          #<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$whereRefItemOID"/>
-        </xsl:variable>
-        
+        <xsl:call-template name="linkItemGroupItem">
+          <xsl:with-param name="ItemGroupOID" select="$ItemGroupLink"/>
+          <xsl:with-param name="ItemOID" select="$whereRefItemOID"/>
+          <xsl:with-param name="ItemName" select="$whereRefItemName"/>
+        </xsl:call-template> 
+
         <xsl:choose>
           <xsl:when test="$whereOP = 'IN' or $whereOP = 'NOTIN'">
-            <xsl:variable name="CheckValue" select="./odm:CheckValue"/>
-            <a>
-              <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$whereRefItemOID"
-                /></xsl:attribute>
-              <xsl:attribute name="title">link to <xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of
-                  select="$whereRefItemOID"/></xsl:attribute>
-              <xsl:value-of select="$whereRefItemName"/>
-            </a>
             <xsl:text> </xsl:text>
             <xsl:variable name="Nvalues" select="count(./odm:CheckValue)"/>
-            <xsl:value-of select="$whereOP"/>
-            <xsl:text> </xsl:text>( <xsl:for-each select="./odm:CheckValue">
-              <xsl:variable name="CheckValueIN" select="."/>
-              <p class="linebreakcell"> "<xsl:value-of select="$CheckValueIN"/>" <xsl:if
-                  test="$whereRefItemCodeList/odm:CodeListItem[@CodedValue=$CheckValueIN]"> (<xsl:value-of
-                    select="$whereRefItemCodeList/odm:CodeListItem[@CodedValue=$CheckValueIN]/odm:Decode/odm:TranslatedText"
-                  />) </xsl:if>
+            <xsl:choose>
+              <xsl:when test="$whereOP='IN'">
+                <xsl:text>IN</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>NOT IN</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text> (</xsl:text>
+            <xsl:if test="$decode='1'"><br /></xsl:if>
+            <xsl:for-each select="./odm:CheckValue">
+              <xsl:variable name="CheckValueINNOTIN" select="."/>
+              <span class="linebreakcell">
+                <xsl:call-template name="displayValue">
+                  <xsl:with-param name="Value" select="$CheckValueINNOTIN"/>
+                  <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+                  <xsl:with-param name="decode" select="$decode"/>
+                  <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+                </xsl:call-template>
                 <xsl:if test="position() != $Nvalues">
                   <xsl:value-of select="', '"/>
                 </xsl:if>
-              </p>
-            </xsl:for-each> ) </xsl:when>
+              </span>
+              <xsl:if test="$decode='1'"><br /></xsl:if>
+            </xsl:for-each><xsl:text>) </xsl:text>
+          </xsl:when>
+
           <xsl:when test="$whereOP = 'EQ'">
             <xsl:variable name="CheckValueEQ" select="./odm:CheckValue"/>
-            <a>
-              <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$whereRefItemOID"
-                /></xsl:attribute>
-              <xsl:attribute name="title">link to <xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of
-                  select="$whereRefItemOID"/></xsl:attribute>
-              <xsl:value-of select="$whereRefItemName"/>
-            </a>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$whereOP"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="odm:CheckValue"/>
-            <xsl:if test="$whereRefItemCodeList/odm:CodeListItem[@CodedValue=$CheckValueEQ]"> (<xsl:value-of
-                select="$whereRefItemCodeList/odm:CodeListItem[@CodedValue=$CheckValueEQ]/odm:Decode/odm:TranslatedText"
-              />) </xsl:if>
+            <xsl:text> = </xsl:text>
+            <xsl:call-template name="displayValue">
+              <xsl:with-param name="Value" select="$CheckValueEQ"/>
+              <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+              <xsl:with-param name="decode" select="$decode"/>
+              <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+            </xsl:call-template>
           </xsl:when>
+
+          <xsl:when test="$whereOP = 'NE'">
+            <xsl:variable name="CheckValueNE" select="./odm:CheckValue"/>
+            <xsl:text> &#x2260; </xsl:text>
+            <xsl:call-template name="displayValue">
+              <xsl:with-param name="Value" select="$CheckValueNE"/>
+              <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+              <xsl:with-param name="decode" select="$decode"/>
+              <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+            </xsl:call-template>
+          </xsl:when>
+
           <xsl:otherwise>
             <xsl:variable name="CheckValueOTH" select="./odm:CheckValue"/>
-            <a>
-              <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$whereRefItemOID"
-                /></xsl:attribute>
-              <xsl:attribute name="title">link to <xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of
-                  select="$whereRefItemOID"/></xsl:attribute>
-              <xsl:value-of select="$whereRefItemName"/>
-            </a>
             <xsl:text> </xsl:text>
-            <xsl:value-of select="$whereOP"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$CheckValueOTH"/>
-
+            <xsl:choose>
+              <xsl:when test="$whereOP='LT'">
+                <xsl:text> &lt; </xsl:text>
+              </xsl:when>
+              <xsl:when test="$whereOP='LE'">
+                <xsl:text> &lt;= </xsl:text>
+              </xsl:when>
+              <xsl:when test="$whereOP='GT'">
+                <xsl:text> &gt; </xsl:text>
+              </xsl:when>
+              <xsl:when test="$whereOP='GE'">
+                <xsl:text> &gt;= </xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="$whereOP"/>
+              </xsl:otherwise>
+            </xsl:choose>
+            <xsl:call-template name="displayValue">
+              <xsl:with-param name="Value" select="$CheckValueOTH"/>
+              <xsl:with-param name="DataType" select="$g_seqItemDefs[@OID=$whereRefItemOID]/@DataType"/>
+              <xsl:with-param name="decode" select="$decode"/>
+              <xsl:with-param name="CodeList" select="$whereRefItemCodeList"/>
+            </xsl:call-template>            
           </xsl:otherwise>
         </xsl:choose>
-
-        <br/>
-        <xsl:if test="$thisRangeCheck != $LastRangeCheck">
-          <xsl:text> AND </xsl:text>
+        
+        <xsl:if test="$break='1'"><br/></xsl:if>
+        <xsl:if test="position() != last()">
+          <xsl:text> and </xsl:text>
         </xsl:if>
-
+        
       </xsl:for-each>
-
-      <xsl:if test="$thisWhereRef != $LastWhereRef">
-        <xsl:text> OR </xsl:text>
+      
+      <xsl:if test="position() != last()">
+        <xsl:text> or </xsl:text>
         <!-- only if this is not the last WhereRef in the ItemREf  -->
       </xsl:if>
-
+      
     </xsl:for-each>
   </xsl:template>
 
+
   <!-- ************************************************************* -->
-  <!-- Template:    linkDecodeList                                   -->
-  <!-- Description:                                                  -->
+  <!-- displayValue                                                  -->
+  <!-- ************************************************************* -->
+  <xsl:template name="displayValue">
+    <xsl:param name="Value"/>
+    <xsl:param name="DataType"/>
+    <xsl:param name="decode"/>
+    <xsl:param name="CodeList"/>
+
+    <xsl:if test="$DataType != 'integer' and $DataType != 'float'">
+      <xsl:text>"</xsl:text><xsl:value-of select="$Value"/><xsl:text>"</xsl:text>
+    </xsl:if>
+    <xsl:if test="$DataType = 'integer' or $DataType = 'float'">
+      <xsl:value-of select="$Value"/>
+    </xsl:if>
+    <xsl:if test="$decode='1'">
+      <xsl:if test="$CodeList/odm:CodeListItem[@CodedValue=$Value]">
+        <xsl:text> (</xsl:text>  
+        <xsl:value-of
+          select="$CodeList/odm:CodeListItem[@CodedValue=$Value]/odm:Decode/odm:TranslatedText"/>
+        <xsl:text>) </xsl:text>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
+  
+  <!-- ************************************************************* -->
+  <!-- Where Text Parameter                                          -->
+  <!-- ************************************************************* -->
+  
+  
+  <!-- ************************************************************* -->
+  <!-- Link to ItemGroup Item                                        -->
+  <!-- ************************************************************* -->
+  <xsl:template name="linkItemGroupItem">
+    <xsl:param name="ItemGroupOID"/>
+    <xsl:param name="ItemOID"/>
+    <xsl:param name="ItemName"/>
+    <xsl:choose>
+      <xsl:when test="$g_seqItemGroupDefs[@OID=$ItemGroupOID]/odm:ItemRef[@ItemOID=$ItemOID]">
+        <xsl:variable name="ItemDescription" select="$g_seqItemDefs[@OID=$ItemOID]/odm:Description/odm:TranslatedText"/>
+        <a>
+          <xsl:attribute name="href">#<xsl:value-of select="$ItemGroupOID"/>.<xsl:value-of select="$ItemOID"/></xsl:attribute>
+          <xsl:attribute name="title"><xsl:value-of select="$ItemDescription"/></xsl:attribute>
+          <xsl:value-of select="$ItemName"/>
+        </a>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$ItemName"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- ************************************************************* -->
+  <!-- Link to DecodeList                                            -->
   <!-- ************************************************************* -->
   <xsl:template name="linkDecodeList">
     <xsl:param name="itemDef"/>
     <xsl:variable name="CODE" select="$itemDef/odm:CodeListRef/@CodeListOID"/>
     <xsl:variable name="CodeListDef" select="$g_seqCodeLists[@OID=$CODE]"/>
     <xsl:variable name="n_items" select="count($CodeListDef/odm:CodeListItem|$CodeListDef/odm:EnumeratedItem)"/>
+  	<xsl:variable name="CodeListDataType" select="$CodeListDef/@DataType" />
 
     <xsl:if test="$itemDef/odm:CodeListRef">
 
       <xsl:choose>
         <xsl:when test="$n_items &lt; 5 and $CodeListDef/odm:CodeListItem">
-          <xsl:text>[</xsl:text>
+        	<xsl:text>[</xsl:text>
+          
           <xsl:for-each select="$CodeListDef/odm:CodeListItem">
-            <xsl:value-of select="concat('&quot;', @CodedValue, '&quot;')"/>
-            <xsl:text> = </xsl:text>
+          	<xsl:if test="$CodeListDataType='text'">
+          		<xsl:value-of select="concat('&quot;', @CodedValue, '&quot;')"/>
+          	</xsl:if>
+          	<xsl:if test="$CodeListDataType != 'text'">
+          		<xsl:value-of select="@CodedValue"/>
+          	</xsl:if>
+          	<xsl:text> = </xsl:text>
             <xsl:value-of select="concat('&quot;', odm:Decode/odm:TranslatedText, '&quot;')"/>
             <xsl:if test="@CodedValue != $CodeListDef/odm:CodeListItem[last()]/@CodedValue">, </xsl:if>
           </xsl:for-each>
@@ -1841,8 +2639,13 @@
         <xsl:when test="$n_items &lt; 5 and $CodeListDef/odm:EnumeratedItem">
           <xsl:text>[</xsl:text>
           <xsl:for-each select="$CodeListDef/odm:EnumeratedItem">
-            <xsl:value-of select="concat('&quot;', @CodedValue, '&quot;')"/>
-            <xsl:if test="@CodedValue != $CodeListDef/odm:EnumeratedItem[last()]/@CodedValue">, </xsl:if>
+          	<xsl:if test="$CodeListDataType='text'">
+          		<xsl:value-of select="concat('&quot;', @CodedValue, '&quot;')"/>
+          	</xsl:if>
+          	<xsl:if test="$CodeListDataType != 'text'">
+          		<xsl:value-of select="@CodedValue"/>
+          	</xsl:if>
+          	<xsl:if test="@CodedValue != $CodeListDef/odm:EnumeratedItem[last()]/@CodedValue">, </xsl:if>
           </xsl:for-each>
           <xsl:text>]</xsl:text>
           <p class="linebreakcell"><xsl:text> &lt;</xsl:text>
@@ -1851,16 +2654,16 @@
             </a>&gt;</p>
         </xsl:when>
         <xsl:otherwise>
-          <a href="#CL.{$CodeListDef/@OID}">
             <xsl:choose>
               <xsl:when test="$g_seqCodeLists[@OID=$CODE]">
-                <xsl:value-of select="$CodeListDef/@Name"/>
+                <a href="#CL.{$CodeListDef/@OID}">
+                  <xsl:value-of select="$CodeListDef/@Name"/>
+                </a>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="$itemDef/odm:CodeListRef/@CodeListOID"/>
               </xsl:otherwise>
             </xsl:choose>
-          </a>
         </xsl:otherwise>
       </xsl:choose>
 
@@ -1883,7 +2686,8 @@
 			      $itemDef/@DataType='partialDatetime' or 
 			      $itemDef/@DataType='incompleteDatetime' or 
 			      $itemDef/@DataType='durationDatetime' or 
-			      ((string-length($itemDef/@Name) &gt; 1) and substring($itemDef/@Name,string-length($itemDef/@Name)-2,string-length($itemDef/@Name)) = 'DUR')">
+			      ((string-length($itemDef/@Name) &gt; 1) and $itemDef/@DataType='text' and
+			        substring($itemDef/@Name,string-length($itemDef/@Name)-2,string-length($itemDef/@Name)) = 'DUR')">
 			<xsl:text>ISO8601</xsl:text>
 		</xsl:if>
 	</xsl:template>
@@ -1930,29 +2734,29 @@
   </xsl:template>
 
   <!-- ************************************************************* -->
-  <!-- Template: linktop                                             -->
+  <!-- Link to Top                                                   -->
   <!-- ************************************************************* -->
-  <xsl:template name="linktop">
+  <xsl:template name="linkTop">
     <p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
   </xsl:template>
-
+	
   <!-- ************************************************************* -->
-  <!-- Template: DocGenerationDate                                   -->
+  <!-- Document Generation Date                                      -->
   <!-- ************************************************************* -->
   <xsl:template name="DocGenerationDate">
-    <p class="documentinfo">Date of document generation: <xsl:value-of select="/odm:ODM/@CreationDateTime"/></p>
+    <p class="documentinfo">Date of Define-XML document generation: <xsl:value-of select="/odm:ODM/@CreationDateTime"/></p>
  </xsl:template>
   
   <!-- ************************************************************* -->
-  <!-- Template: StyleSheetDate                                      -->
+  <!-- StyleSheet Date                                               -->
   <!-- ************************************************************* -->
   <xsl:template name="StylesheetDate">
-    <p class="stylesheetinfo">Stylesheet version: <xsl:value-of select="$g_stylesheetVersion"/></p>
+    <span class="stylesheetinfo">Stylesheet version: <xsl:value-of select="$g_stylesheetVersion"/></span>
     <xsl:call-template name="lineBreak"/>
   </xsl:template>
   
   <!-- ************************************************************* -->
-  <!-- Template: "GenerateJavaScript"                                -->
+  <!-- Generate JavaScript                                           -->
   <!-- ************************************************************* -->
   <xsl:template name="GenerateJavaScript">
 
@@ -2038,7 +2842,7 @@ function reset_menus() {
 
 
 <!-- ************************************************************* -->
-<!-- Template: "GenerateCSS"                                       -->
+<!-- Generate CSS                                                  -->
 <!-- ************************************************************* -->
 <xsl:template name="GenerateCSS">
 <style type="text/css">
@@ -2131,6 +2935,7 @@ function reset_menus() {
   #main .docinfo{
   width:95%;
   text-align:right;
+  padding: 0px 5px;
   }
   
   div.containerbox{
@@ -2158,15 +2963,23 @@ function reset_menus() {
   table caption{
   border:0px solid #999999;
   left:20px;
-  font-size:1.6em;
+  font-size:1.4em;
   font-weight:bolder;
   color:#800000;
   margin:10px auto;
   text-align:left;
   }
   
-  table caption .xpt{
+  table caption .dataset{
   font-weight:normal;
+  }
+  
+  table caption.header{
+  font-size:1.6em;
+  margin-left:0;
+  font-weight:bolder;
+  text-align:left;
+  color:#800000;
   }
   
   table tr{
@@ -2185,7 +2998,7 @@ function reset_menus() {
   text-align:left;
   padding:5px;
   border:1px solid #000000;
-  font-size:1.2em;
+  font-size:1.3em;
   }
   
   table td{
@@ -2233,7 +3046,7 @@ function reset_menus() {
   
   .standard{
   font-size:1.6em;
-  font-weight:bolder;
+  font-weight:bold;
   text-align:left;
   padding:15px;
   margin-left:20px;
@@ -2244,13 +3057,26 @@ function reset_menus() {
   border:0px;
   }
   
+  .study{
+  font-size:1.6em;
+  font-weight:bold;
+  text-align:left;
+  padding:0px;
+  margin-left:0px;
+  margin-top:00px;
+  margin-right:0px;
+  margin-bottom:0px;
+  color:#800000;
+  border:0px none;
+  }
+  
   .linktop{
   font-size:1.2em;
   margin-top:5px;
   }
   .documentinfo, .stylesheetinfo{
   font-size:1.2em;
- }
+  }
   
   .invisible{
   display:none;
@@ -2269,9 +3095,75 @@ function reset_menus() {
   color:#FF0000;
   }
   
+  .arm-table{ background-color:#ececec;}
+  
+  table th.label{
+  width:13%;
+  }
+  .arm{
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:0;
+  background-color:#C0C0C0;
+  width:97%;
+  }
+  
+  .title{ margin-left:5pt; }
+  
+  p.summaryresult{ margin-left:15px; margin-top:5px; margin-bottom:5px;}
+  p.parameter{ margin-top:5px; margin-bottom:5px;}
+  p.analysisvariable{ margin-top:5px; margin-bottom:5px;}
+  .datareference{ margin-top:5px; margin-bottom:5px;}
+  tr.analysisresult{ background-color:#6699CC; color:#FFFFFF; font-weight:bold; border:1px solid black;}
+  
+  .code-context{
+  padding:5px 0px;
+  }
+  .coderef{
+  font-size:1.2em;
+  line-height:150%;
+  padding:5px;
+  }
+  .code{
+  font-family:"Courier New", monospace, serif;
+  font-size:1.2em;
+  line-height:150%;
+  white-space:pre;
+  display:block;
+  vertical-align:top;
+  padding:5px;
+  }
+  
+  
+  dl.multiple-table
+  {
+  width:95%;
+  padding: 5px 0px;
+  font-size:0.8em;
+  color:#000000;
+  }
+
+  dl.multiple-table dt
+  {
+  clear: left;
+  float: left;
+  width: 200px;
+  margin: 0;
+  padding: 5px 5px 5px 0px;
+  font-weight: bold;
+  }
+  
+  dl.multiple-table dd
+  {
+  margin-left: 210px;
+  padding: 5px;
+  font-weight: normal;
+  }
+  
   @media print{
   
-  body, h1, table caption{
+  body, h1, table caption, table caption.header{
   color:#000000;
   }
   
@@ -2298,7 +3190,6 @@ function reset_menus() {
   .linktop, .stylesheetinfo{
   display:none !important;
   width:0px;
-  ;
   }
   #main{
   left:0px;
